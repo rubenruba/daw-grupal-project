@@ -68,3 +68,52 @@ Funcionalidades
     - Backend - Laravel? (PHP sin framework)
     - Base de datos - MongoDB
     - Despliegue - AWS tecnologías EC2 y S3
+
+
+DESCRIPCIÓN PARA ENVIAR.
+Nuestra propuesta trata en un foro para estudiantes el cual permite la compartición y descarga de documentación, apuntes y actividades de el curso que se encuentran formando. Aquí adjunto la descripción del proyecto:
+Funcionalidades
+1 - Usuario sin registar
+    - Registrarse
+    - Ver posts
+    - Búsqueda de archivos/posts
+    - Cambiar tema de la página
+
+2 - Usuario registrado (estudiante)
+    - Cerrar sesión
+    - CRUD archivos/posts
+    - CRUD comentarios
+    - Añadir amigos
+    - Crear grupos
+    - Descargar otros archivos
+    - Añadir favoritos
+    - Editar perfil
+
+3 - Usuario admin
+    - Eliminar usuarios
+    - Eliminar comentarios
+    - Eliminar posts (no deseados)
+    - Añadir posts (novedades)
+
+4 - Envío de correos
+    - Verificación del correo del usuario
+    - Reset contraseña
+    - Envío de notificaciones (1 al día si hay algo nuevo) - Solicitud de amistad
+
+5 - Páginas
+    - Landing
+    - Login
+    - Register
+    - Búsqueda
+    - Perfil
+    - Favoritos
+    - Grupo (página o chat en pequeño)
+    - Post
+    - Creación de post
+    - Gestión de usuarios (admin)
+
+6 - Tecnologías
+    - Frontend - React JS
+    - Backend - Laravel
+    - Base de datos - MongoDB
+    - Despliegue - AWS tecnologías EC2 y S3
