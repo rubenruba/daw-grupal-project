@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { LoginPage } from './pages/Login/login';
 import { RegisterPage } from './pages/Register/register';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.querySelector('body'));
 root.render(
   <BrowserRouter>
     <Routes>
