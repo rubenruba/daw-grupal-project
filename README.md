@@ -1,18 +1,15 @@
-[![](https://img.shields.io/static/v1?label=BY&message=RAMOUN&color=birghtgreen)](https://mrramoun.github.io)
+# HELPYA
 
-# Project Name
+> Esta aplicación web se trata de un foro de estudiantes para que entre estos puedan compartir sus dudas y preocupaciones entre la comunidad.
 
-> One paragraph statement about the project.
-
-![screenshot](images/app_screenshot.png)
+![LOGO](/frontend/src/assets/logo%20ordenador.png)
 
 | *Additional description about the project and its features.*
 
 ## Built With
 
-- Languages: _**N/A**_
-- Frameworks: _**N/A**_
-- Technologies used: _**N/A**_
+- Languages: _**JavaScript, PHP, SASS**_
+- Frameworks: _**React**_
 
 ## Live Demo
 
@@ -64,39 +61,14 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
-
-- **GitHub**: [![@mrramoun](https://img.shields.io/github/followers/MrRamoun?label=Ramoun&style=social)](https://github.com/mrramoun)
-- **Twitter**: [![@ramoun16](https://img.shields.io/twitter/follow/ramoun16?label=ramoun16&style=social)](https://twitter.com/ramoun16)
-- **LinkdIn**: [![@ramoun](https://img.shields.io/github/followers/ramon?label=ramoun&logo=linkedin&style=social)](https://www.linkedin.com/in/ramoun/)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](issues/).
+👤 **Alba Silva Flores**
+👤 **Rubén Martínez Peris**
+👤 **Marcos Ugena Ochando**
+👤 **Kevin Buenaño Evans**
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](lic.url) licensed.
-
-
+¡¡Danos una ⭐️ si te gusta este proyecto!!
 
 
 
