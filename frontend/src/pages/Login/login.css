@@ -1,0 +1,47 @@
+body {
+  background: "#52489C";
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Poppins";
+  font-size: 36px;
+  color: "#003A4D";
+}
+
+label {
+  font-family: "Poppins";
+  color: "#003A4D";
+}
+
+input {
+  border-radius: 15px;
+}
+
+.login {
+  margin-top: 150px;
+  width: 300px;
+  height: 450px;
+  background-color: "#98e2d8";
+  border-radius: 15px;
+}
+
+.btnLogin {
+  background-color: "#003A4D";
+  color: "#F3F3F3";
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .login {
+    width: 500px;
+    height: 350px;
+  }
+}
+@media screen and (min-width: 998px) {
+  .login {
+    width: 500px;
+    height: 400px;
+  }
+}/*# sourceMappingURL=login.css.map */
