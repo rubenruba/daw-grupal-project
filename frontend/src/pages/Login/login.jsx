@@ -1,4 +1,5 @@
 import './login.sass';
+import { FooterComponent } from '../../components/Footer/footer';
 
 export const LoginPage = () => {
     // JS
@@ -7,7 +8,7 @@ export const LoginPage = () => {
     // HTML 
     return (
         <>
-            Login page
+            <FooterComponent></FooterComponent>
         </>
     )
 }
