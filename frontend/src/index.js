@@ -15,6 +15,7 @@ root.render(
       <Route path="login" element={ <LoginPage/> } />
       <Route path="register" element={ <RegisterPage/> } />
       <Route path="create-post" element={ <CreatePostPage/> } />
+      <Route path="landing" element={ <LandginPage/> } />
   </Routes>
 </BrowserRouter>
 );
