@@ -1,18 +1,55 @@
 @import ../../styles/variables.sass
 
+@mixin boxes($color)
+    background-color: $color
+    border-radius: 12px
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    width: 300px
+
+@mixin buttons($color1, $color2)
+    background-color: $color1
+    color: $color2
+    border: none
+    border-radius: 12px
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    width: 130px
+    font-weight: bold       
+
+
+
 .landing
     background-color: $whiteLigth
     width: 100vw
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
 
 .container
-    border-radius: 12px
     background-color: $purpleLigth
-    width: 100%
+    width: 90vw
 
 .box1
-    background-color: $greenLigth
-    border-radius: 12px
+    @include boxes($greenLigth)
+    p
+        color: $blueLigth
+
+.box2
+    @include boxes($blueLigth)
+    p
+        color: $greenLigth
+
+.box3
+    width: 90%
+    p
+        color: $greenLigth
+        text-align: justify
+        font-size: 22px
+        font-weight: bold       
 
 
+.btnStartSearch
+    @include buttons($blueLigth, $whiteLigth)
 
-
+.btnJoinNow
+    @include buttons($greenLigth, $whiteDark)
