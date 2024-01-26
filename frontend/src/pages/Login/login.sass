@@ -1,39 +1,33 @@
 @import '../../styles/variables.sass'
-body
+
+.login-container
     background: $purpleLigth
-    display: flex
-    justify-content: center
-
-h1
-    font-family: 'Poppins'
-    font-size: 36px
-    color: $blueDark
-
-label
-    font-family: 'Poppins'
-    color: $blueDark
-
-input
-    border-radius: 15px
-
-.login
-    margin-top: 150px
-    width: 300px
-    height: 450px
-    background-color: $greenLigth
-    border-radius: 15px
-
-.btnLogin
-    background-color: $blueDark
-    color: $whiteLigth
-    border-radius: 15px
-
-@media screen and (min-width: 768px)
-    .login
-        width: 500px
-        height: 350px    
-    
-@media screen and (min-width: 998px)
-    .login
-        width: 500px
-        height: 400px  
+    color: $blueLigth
+    height: 100vh
+    form
+        background-color:$greenLigth
+        width: 80vw
+        max-width: 600px
+        border-radius: 32px
+        display: flex
+        align-items: center
+        flex-direction: column
+        input
+            border-radius: 16px
+            border: none
+            width: 70%
+            height: 30px
+            margin-bottom: 8px 
+        label
+            padding-left: 16%
+            width: 100%
+        .btn
+            border-radius: 16px
+            background-color: $blueLigth
+            border: none
+            color: $whiteLigth
+            padding: 5px
+            width: 220px
+            margin-top: 20px
+        a
+            color: $blueLigth
