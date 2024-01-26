@@ -1,3 +1,79 @@
+# HELPYA
+
+> Esta aplicación web se trata de un foro de estudiantes para que entre estos puedan compartir sus dudas y preocupaciones entre la comunidad.
+
+![LOGO](/frontend/src/assets/logo%20ordenador.png)
+
+| *Additional description about the project and its features.*
+
+## Built With
+
+- Languages: _**JavaScript, PHP, SASS**_
+- Frameworks: _**React**_
+
+## Live Demo
+
+[Live Demo Link](https://livedemo.com)
+
+## Getting Started
+
+**This is an example of how you may give instructions on setting up your project locally.**
+**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+- [**npm**](https://nodejs.org) (**n**ode **p**ackage **m**anager) - to be able to install packages locally.
+- **A github Account** - to be able to use github actions.
+
+### Setup
+
+- **Open** the terminal.
+- **Run** `cd \path\to\where\you\want\your\local\copy`
+- **Clone** the repo
+  1. **Run** `git clone git@github.com:MrRamoun/README.git`
+  2. **Run** `cd README/`
+
+### Install
+
+- install **Webhint** linter
+
+  1. **Run** `npm install --save-dev hint@6.x`
+  2. **Copy** [.hintrc](https://github.com/microverseinc/linters-config/blob/master/html-css/.hintrc) file to the root directory of your project.
+
+- install **Stylelint** linter
+
+  1. **Run** `npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x`
+  2. **Copy** [.stylelintrc.json](https://github.com/microverseinc/linters-config/blob/master/html-css/.stylelintrc.json) to the root directory of your project.
+
+
+### Usage
+
+### Run tests
+
+- run **Webhint** linter
+  - **Run** `npx hint .` on the root of your directory of your project.
+- run **Stylelint** linter
+  - **Run** `npx stylelint "**/*.{css,scss}"` on the root of your directory of your project.
+
+### Deployment
+
+## Authors
+
+👤 **Alba Silva Flores**
+👤 **Rubén Martínez Peris**
+👤 **Marcos Ugena Ochando**
+👤 **Kevin Buenaño Evans**
+
+## Show your support
+
+¡¡Danos una ⭐️ si te gusta este proyecto!!
+
+
+
+
+
 # FORO PARA ESTUDIANTES (compartir archivos...)
 - Usuario por cada estudiante
 - Usuario admin
