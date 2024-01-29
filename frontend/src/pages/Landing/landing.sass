@@ -19,15 +19,9 @@
 
 .landing
     background-color: $whiteLigth
-    width: 100vw
-    height: 100vh
-    display: flex
-    justify-content: center
-    align-items: center
 
 .container
     background-color: $purpleLigth
-    width: 90vw
 
 .box1
     @include boxes($greenLigth)
@@ -44,12 +38,23 @@
     p
         color: $greenLigth
         text-align: justify
-        font-size: 22px
+        font-size: 17px
         font-weight: bold       
-
 
 .btnStartSearch
     @include buttons($blueLigth, $whiteLigth)
 
 .btnJoinNow
     @include buttons($greenLigth, $whiteDark)
+
+@media screen and (max-width: 576px)  
+    .container
+        flex-direction: row
+        justify-content: space-evenly
+   
+    .box3
+        font-size: 20px
+
+@media screen and (min-width: 992px)
+    .box3
+        font-size: 25px

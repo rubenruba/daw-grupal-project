@@ -27,7 +27,7 @@ export const FooterComponent = () => {
                     <img src="/img/TikTok.png" alt="" />
                 </div>
             </div>
-            <p>Copyright ©2024 Helpya, Inc. Site design / logo © 2024</p>
+            <p className='text-center'>Copyright ©2024 Helpya, Inc. Site design / logo © 2024</p>
         </footer>
     )
 }
