@@ -10,7 +10,7 @@ export const CreatePostPage = () => {
             {/* TO DO - Make header a component */}
             <header>
                 <img src='/logo.png' alt="" id='logo' />
-                <div className='d-flex justify-content-between' id='search-container'>
+                <div className='d-flex justify-content-between d-none d-sm-flex' id='search-container'>
                 <input type="text" placeholder=' Search... ' className='form-control me-4' id='cabe'/>
                 <img src="/lupa.png" alt="" />
                 </div>
@@ -25,9 +25,9 @@ export const CreatePostPage = () => {
                         <p className='mt-4'>Texto</p>
                         <textarea type="text" className='form-control' rows="15" />
                     </div>
-                    <div id='enlace'>
-                        <div>
-                            <p className='mt-5'>Adjuntar archivos</p>
+                    <div id='enlace' className='d-flex flex-lg-row align-items-lg-center justify-content-evenly'>
+                        <div className='mb-4'>
+                            <p className='mt-5' id='parr'>Adjuntar archivos</p>
                             {/* TO DO - Add an input to insert files */}
                             <input type="file" id="fileInput" style={{ 'display': 'none' }}></input>
                             <img src="/adjuntar.png" alt="" className='' id='adjunta' onClick={test}/>
