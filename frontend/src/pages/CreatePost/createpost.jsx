@@ -3,7 +3,8 @@ import './createpost.sass';
 
 export const CreatePostPage = () => {
     // JS
-
+    // const url = 'url to aws';
+    const url = 'http://localhost/testFinalProjects/insertData/insertPost.php';
 
     // HTML
     return (
@@ -15,18 +16,19 @@ export const CreatePostPage = () => {
                 <img src="/circle-user.png" alt="" id='user' />
             </header>
             <section className='create-post-container pt-5 pb-5'>
-                <form action="">
+                <form action={url} method='post' enctype="multipart/form-data">
                     <h3 className='text-center fw-bold'>MAKE A POST</h3>
                     <div id='contenido'>
                         <p>Título</p>
-                        <input type="text" className='form-control'/>
+                        <input type="text" className='form-control' name='title'/>
                         <p className='mt-4'>Texto</p>
-                        <textarea type="text" className='form-control' rows="15" />
+                        <textarea type="text" className='form-control' rows="15" name='postText'/>
                     </div>
                     <div id='enlace'>
                         <div>
                             <p className='mt-5'>Adjuntar archivos</p>
                             {/* TO DO - Add an input to insert files */}
+                            <input type="file" name='files[]' multiple/>
                             <img src="/adjuntar.png" alt="" />
                         </div>
                         <div className='d-flex flex-column'>
