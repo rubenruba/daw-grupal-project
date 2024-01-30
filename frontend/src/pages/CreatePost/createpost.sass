@@ -7,82 +7,61 @@ header
     display: flex
     justify-content: space-between
     align-items: center
-#cabe
-    width: 25%
-    height: 40px
-    border: 2px solid black
-    border-radius: 8px
-    background-color: $greenLigth
-    border-color: $blueLigth
-    padding: 10px
-    position: relative
-#lupa
-    position: absolute
-#logo
-    height: 12vh
-#user
-    margin: 20px
+    #cabe
+        width: 25%
+        height: 40px
+        border: 2px solid black
+        border-radius: 8px
+        background-color: $greenLigth
+        border-color: $blueLigth
+        padding: 10px
+        position: relative
+    #logo
+        height: 12vh
+    #user
+        margin: 20px
 //HASTA AQUI LA CABECERA
-body
-    background-color: #DBDBDB
-h3
-    text-align: center
-    margin-top: 30px
-    font-weight: 'Poppins'
-    color: $blueLigth
-p
-    margin: 0
-    font-size: 24px
-    color: $blueLigth
-    margin-bottom: 5px
-#contenido
-    display: flex
-    flex-direction: column
-    margin-left: 20%
-    margin-right: 20%
-#i1
-    border: none
-    border-radius: 8px
-    height: 50px
-#i2
-    @extend #i1
-    height: 40vh
-#p2
-    margin-top: 20px
-#adjunta
-    height: 100px
-    width: 100px
-    margin-left: 5%
-#padj
-    margin-top: 30px
-#enlace
-    position: relative
-    display: flex
-    flex-direction: row
-    margin-left: 20%
-    margin-right: 20%
-    align-items: flex-end
-    justify-content: space-between
-#btn1
-    background-color: $blueLigth
-    color: $whiteLigth
-    border: none
-    border-radius: 8px
-    padding: 10px
-    width:190px
-    height: 50px
-    margin-top: 10px
-#mas
-    margin-left: 20px
-#btn2
-    background-color: $blueLigth
-    color: $whiteLigth
-    border: none
-    width:150px
-    border-radius: 16px
-    padding: 6px
-    margin-top: 30px
-#enlace2
-    display: flex
-    flex-direction: column
+
+.create-post-container
+    background-color: $grey
+    h3
+        color: $blueLigth
+    p
+        margin: 0
+        font-size: 24px
+        color: $blueLigth
+        margin-bottom: 5px
+    #contenido
+        display: flex
+        flex-direction: column
+        margin-left: 20%    
+        margin-right: 20%
+        textarea 
+            resize: none
+            border-radius: 8px
+        input
+            border-radius: 8px
+            height: 50px
+    #enlace
+        position: relative
+        display: flex
+        flex-direction: row
+        margin-left: 20%
+        margin-right: 20%
+        align-items: flex-end
+        justify-content: space-between
+        div:first-of-type img
+            height: 100px
+            width: 100px
+            margin-left: 5%
+        button
+            background-color: $blueLigth
+            border: none
+            color: $whiteLigth
+        #btn1
+            border-radius: 8px
+            width:190px
+        #btn2
+            width:150px
+            border-radius: 16px
 
