@@ -13,14 +13,9 @@
     border-radius: 12px
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
     width: 130px
-    font-weight: bold       
+    font-weight: bold
 
-
-
-.landing
-    background-color: $whiteLigth
-
-.container
+.main
     background-color: $purpleLigth
 
 .box1
@@ -39,7 +34,7 @@
         color: $greenLigth
         text-align: justify
         font-size: 17px
-        font-weight: bold       
+        font-weight: bold
 
 .btnStartSearch
     @include buttons($blueLigth, $whiteLigth)
@@ -47,11 +42,16 @@
 .btnJoinNow
     @include buttons($greenLigth, $whiteDark)
 
-@media screen and (max-width: 576px)  
-    .container
+.chats
+    width: 70px
+
+.guardarFavorito
+    width: 50px
+@media screen and (max-width: 576px)
+    .main
         flex-direction: row
-        justify-content: space-evenly
-   
+        justify-content: space-around
+
     .box3
         font-size: 20px
 
