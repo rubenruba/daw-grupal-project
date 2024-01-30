@@ -1,21 +1,11 @@
 import "./landing.sass";
 import { SearchBarComponent } from "../../components/SearchBar/SearchBar";
 import { FooterComponent } from "../../components/Footer/footer";
+import { Link } from 'react-router-dom';
+
 
 export const LandginPage = () => {
   // JS
-  window.open = () => {
-    document
-      .getElementsByClassName("btnStartSearch")[0]
-      .addEventListener("click", () => {
-        window.location.href = "/login";
-      });
-    document
-      .getElementsByClassName("btnJoinNow")[0]
-      .addEventListener("click", () => {
-        window.location.href = "/register";
-      });
-  };
 
   // HTML
   return (
@@ -30,12 +20,14 @@ export const LandginPage = () => {
           <div className="d-flex flex-column justify-content-center align-items-center p-3 mx-5 mt-5 box1">
             <p>Find any type of files related to your studies and more</p>
             <button className="btn btn-primary p-2 btnStartSearch">
-              Start searching
+              <Link to="/#" className="text-white text-decoration-none">Start searching</Link>
             </button>
           </div>
           <div className="d-flex flex-column justify-content-center align-items-center p-3 mx-5 mt-5 box2">
             <p>Share files with other students around the world</p>
-            <button className="btn btn-primary p-2 btnJoinNow">Join Now</button>
+            <button className="btn btn-primary p-2 btnJoinNow">
+            <Link to="/register" className="text-dark text-decoration-none">Join now</Link>
+              </button>
           </div>
         </div>
         <div className="d-flex flex-column justify-content-center align-items-center p-3 mt-5 box3">
