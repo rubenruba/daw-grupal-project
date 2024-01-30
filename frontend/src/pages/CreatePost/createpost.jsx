@@ -1,4 +1,5 @@
 import { FooterComponent } from '../../components/Footer/footer';
+import { HeaderComponent } from '../../components/Header/header';
 import './createpost.sass';
 
 export const CreatePostPage = () => {
@@ -8,14 +9,7 @@ export const CreatePostPage = () => {
     return (
         <>
             {/* TO DO - Make header a component */}
-            <header>
-                <img src='/logo.png' alt="" id='logo' />
-                <div className='d-flex justify-content-between d-none d-sm-flex' id='search-container'>
-                <input type="text" placeholder=' Search... ' className='form-control me-4' id='cabe'/>
-                <img src="/lupa.png" alt="" />
-                </div>
-                <img src="/circle-user.png" alt="" id='user' />
-            </header>
+            <HeaderComponent></HeaderComponent>
             <section className='create-post-container pt-5 pb-5'>
                 <form action="">
                     <h3 className='text-center fw-bold'>MAKE A POST</h3>
