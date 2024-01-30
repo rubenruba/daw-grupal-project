@@ -1,3 +1,4 @@
+import { FavoriteArea } from "../../components/FavoritesArea/FavoriteArea";
 import { FooterComponent } from "../../components/Footer/footer";
 import "./search_favorites.sass";
 
@@ -21,85 +22,10 @@ export const Favorites = () => {
                     <img src="/filtro.png" alt="" />
                 </div>
 
-                <div className="container-f">
-                    <div className="simbolos">
-                        <img src="/preguntas-mas-frecuentes.png" alt="" />
-                        <img src="/star.png" alt="" />
-                    </div>
-                    <div className="favorite-text">
-                        <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. INTEGER SED FEUGIAT NUNC, ET VARIUS RISUS?</p>
-                    </div>
-                    <div className="container-tag">
-                        <button>Etiqueta1</button>
-                        <button>Etiqueta1</button>
-                        <button>Etiqueta1</button>
-                    </div>
-
-                </div>
-
-                <div className="container-f">
-                    <div className="simbolos">
-                        <img src="/preguntas-mas-frecuentes.png" alt="" />
-                        <img src="/star.png" alt="" />
-                    </div>
-                    <div className="favorite-text ms-lg-0">
-                        <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. INTEGER SED FEUGIAT NUNC, ET VARIUS RISUS?</p>
-                    </div>
-                    <div className="container-tag">
-                        <button>Etiqueta1</button>
-                        <button>Etiqueta1</button>
-                        <button>Etiqueta1</button>
-                    </div>
-                    
-                </div>
-
-                <div className="container-f">
-                    <div className="simbolos">
-                        <img src="/preguntas-mas-frecuentes.png" alt="" />
-                        <img src="/star.png" alt="" />
-                    </div>
-                    <div className="favorite-text">
-                        <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. INTEGER SED FEUGIAT NUNC, ET VARIUS RISUS?</p>
-                    </div>
-                    <div className="container-tag">
-                        <button>Etiqueta1</button>
-                        <button>Etiqueta1</button>
-                        <button>Etiqueta1</button>
-                    </div>
-                    
-                </div>
-
-                <div className="container-f">
-                    <div className="simbolos">
-                        <img src="/preguntas-mas-frecuentes.png" alt="" />
-                        <img src="/star.png" alt="" />
-                    </div>
-                    <div className="favorite-text">
-                        <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. INTEGER SED FEUGIAT NUNC, ET VARIUS RISUS?</p>
-                    </div>
-                    <div className="container-tag">
-                        <button>Etiqueta1</button>
-                        <button>Etiqueta1</button>
-                        <button>Etiqueta1</button>
-                    </div>
-                    
-                </div>
-
-                <div className="container-f">
-                    <div className="simbolos">
-                        <img src="/preguntas-mas-frecuentes.png" alt="" />
-                        <img src="/star.png" alt="" />
-                    </div>
-                    <div className="favorite-text">
-                        <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. INTEGER SED FEUGIAT NUNC, ET VARIUS RISUS?</p>
-                    </div>
-                    <div className="container-tag">
-                        <button>Etiqueta1</button>
-                        <button>Etiqueta1</button>
-                        <button>Etiqueta1</button>
-                    </div>
-                    
-                </div>
+              <FavoriteArea></FavoriteArea>
+              <FavoriteArea></FavoriteArea>
+              <FavoriteArea></FavoriteArea>
+              
 
                 <FooterComponent></FooterComponent>
             </div>
