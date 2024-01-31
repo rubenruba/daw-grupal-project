@@ -1,5 +1,6 @@
 import { FooterComponent } from '../../components/Footer/footer';
 import { HeaderComponent } from '../../components/Header/header';
+import { Header2Component } from '../../components/Header2/header2';
 import './createpost.sass';
 
 export const CreatePostPage = () => {
@@ -9,7 +10,7 @@ export const CreatePostPage = () => {
     return (
         <>
             {/* TO DO - Make header a component */}
-            <HeaderComponent></HeaderComponent>
+            <Header2Component></Header2Component>
             <section className='create-post-container pt-5 pb-5'>
                 <form action="">
                     <h3 className='text-center fw-bold'>MAKE A POST</h3>
