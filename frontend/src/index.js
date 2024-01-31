@@ -7,6 +7,7 @@ import { RegisterPage } from './pages/Register/register';
 import { LandginPage } from './pages/Landing/landing';
 import { CreatePostPage } from './pages/CreatePost/createpost';
 import { Favorites } from './pages/SearchAndFavorites/search_favorites';
+import { NotFoundPage } from './pages/NotFound/NotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
       <Route path="register" element={ <RegisterPage/> } />
       <Route path="create-post" element={ <CreatePostPage/> } />
       <Route path="search-and-favorites" element={ <Favorites/> } />
+      <Route path="NotFound" element={ <NotFoundPage/> } />
   </Routes>
 </BrowserRouter>
 );
