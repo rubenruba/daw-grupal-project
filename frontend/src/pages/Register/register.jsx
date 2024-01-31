@@ -15,7 +15,7 @@ export const RegisterPage = () => {
         <label>SurName</label>
         <input className="form-control" type="text" name="surname"/>
         <label>Password</label>
-        <input className="form-control" type="text" name="password"/>
+        <input className="form-control" type="password" name="password"/>
         <label>UserName</label>
         <input className="form-control" type="text" name="username"/>
         <label>Email</label>

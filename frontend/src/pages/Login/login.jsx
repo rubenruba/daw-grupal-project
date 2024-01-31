@@ -10,10 +10,10 @@ export const LoginPage = () => {
       <form action={url} method="post" className="p-3 sm-mx-300">
         <h2 className="fw-bold">SIGN IN</h2>
         <label>Email</label>
-        <input type="text" className="border-0 " name="email" />
+        <input type="text" className="border-0 form-control" name="email" />
 
         <label>Contraseña</label>
-        <input type="password" className="border-0 " name="password" />
+        <input type="password" className="border-0 form-control" name="password" />
 
         <label href="#" className="mt-3 mb-3">
           <a href="#">Olvidaste tu contraseña?</a>
