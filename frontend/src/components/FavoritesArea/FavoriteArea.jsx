@@ -2,16 +2,10 @@ import './FavoriteArea.sass';
 import React, { useState } from 'react';
 
 export const FavoriteArea = () => {
-    const [texto, setTexto] = useState("LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. INTEGER SED FEUGIAT NUNC, ET VARIUS RISUS?");
+    // JS
 
-    const cambiarTexto = (nuevoTexto) => {
-        setTexto(nuevoTexto);
-    };
 
-    const insertarTexto = (nuevoTexto) => {
-        cambiarTexto(nuevoTexto);
-    };
-
+    // HTML
     return (
         <div className="container-f">
             <div className="simbolos">
@@ -19,10 +13,7 @@ export const FavoriteArea = () => {
                 <img src="/star.png" alt="" />
             </div>
             <div className="favorite-text">
-                <p>{texto}</p>
-                <button onClick={() => insertarTexto("Nuevo texto aquí")}>
-                    Cambiar Texto
-                </button>
+                <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. INTEGER SED FEUGIAT NUNC, ET VARIUS RISUS?</p>
             </div>
             <div className="container-tag">
                 <button>Etiqueta1</button>
