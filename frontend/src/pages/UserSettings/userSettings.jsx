@@ -1,9 +1,24 @@
 import "./userSettings.sass";
 import { FooterComponent } from "../../components/Footer/footer";
 import { SearchBarComponent } from "../../components/SearchBar/SearchBar";
-
+import React, { useState } from 'react';
 export const UserSettingsPage = () => {
   // JS
+  const [isChecked, setIsChecked] = useState(false);
+  const handleChange = () => {
+    setIsChecked(!isChecked);
+    oscurecer();
+  }
+  function oscurecer() {
+      let he=document.getElementsByTagName("header")[0];
+      let fo=document.getElementsByTagName("footer")[0];
+      he.style.backgroundColor="#1A7D61";
+      fo.style.backgroundColor="#003A4D";
+      if(isChecked){
+        he.style.backgroundColor="";
+        fo.style.backgroundColor="";
+      }
+  }
 
   // HTML
   return (
@@ -58,6 +73,8 @@ export const UserSettingsPage = () => {
                       type="checkbox"
                       className="form-check-input"
                       id="theme"
+                      checked={isChecked}
+                      onChange={handleChange}
                     />
                     <label className="form-check-label" for="theme">
                       Dark Theme
