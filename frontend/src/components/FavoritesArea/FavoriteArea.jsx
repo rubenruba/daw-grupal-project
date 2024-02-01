@@ -3,23 +3,27 @@ import React, { useState } from 'react';
 
 export const FavoriteArea = (post) => {
     // JS
-    const url = 'http://localhost/testFinalProjects/insertData/addFavourite.php';
+    const addFav = 'http://localhost/testFinalProjects/insertData/addFavourite.php';
+    const removeFav = 'http://localhost/testFinalProjects/deleteFavourite.php';
     const [starPath, setStarPath] = useState('/svg/star-outlined.svg');
 
     const changePath = () => {
         if(starPath === '/svg/star-outlined.svg'){
             setStarPath('/svg/star-solid.svg');
+            addFavourite();
         } else {
             setStarPath('/svg/star-outlined.svg');
-            console.log('CAMBIA')
+            deleteFavourite();
         }
     }
 
     const addFavourite = () => {
-        fetch(`${url}?postId=${post.PostId}`, {
-            method: 'POST',
-            // body
-        })
+        console.log(post.post.PostId);
+        fetch(`${addFav}?postId=${post.post.PostId}`, { method: 'GET' });
+    }
+
+    const deleteFavourite = () => {
+        fetch(`${removeFav}?postId=${post.post.PostId}`, { method: 'GET' });
     }
 
     // HTML
@@ -32,7 +36,7 @@ export const FavoriteArea = (post) => {
                 </button>
             </div>
             <div className="favorite-text">
-                <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. INTEGER SED FEUGIAT NUNC, ET VARIUS RISUS?</p>
+                <p>{post.post.Title.toUpperCase()}</p>
             </div>
             <div className="container-tag">
                 <button>Etiqueta1</button>

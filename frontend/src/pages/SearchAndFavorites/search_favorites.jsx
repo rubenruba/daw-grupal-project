@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FavoriteArea } from "../../components/FavoritesArea/FavoriteArea";
 import { FooterComponent } from "../../components/Footer/footer";
 import { HeaderComponent } from "../../components/Header/header";
@@ -7,7 +7,7 @@ import "./search_favorites.sass";
 export const Favorites = () => {
   // JS
   const url = "http://localhost/testFinalProjects/retrieveData/getAllPost.php";
-  let posts = [];
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchPosts = () => {
@@ -24,7 +24,7 @@ export const Favorites = () => {
           return response.json();
         })
         .then((data) => {
-          posts = data;
+          setPosts(data);
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -32,7 +32,7 @@ export const Favorites = () => {
     };
 
     fetchPosts();
-  });
+  }, []);
 
   // HTML
   return (
@@ -44,11 +44,9 @@ export const Favorites = () => {
           <img src="/filtro.png" alt="" />
         </div>
 
-        {
-            setTimeout(() => {
-                posts.map((post) => (<FavoriteArea></FavoriteArea>))
-            }, 100)
-        }
+        {posts.map((post) => {
+          return <FavoriteArea key={post.PostId} post={post}></FavoriteArea>;
+        })}
 
         <FooterComponent></FooterComponent>
       </div>
