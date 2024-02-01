@@ -12,11 +12,11 @@ export const UserSettingsPage = () => {
   function oscurecer() {
       let he=document.getElementsByTagName("header")[0];
       let fo=document.getElementsByTagName("footer")[0];
-      he.style.backgroundColor="#1A7D61";
-      fo.style.backgroundColor="#003A4D";
+      he.classList.add("modooscuro");
+      fo.classList.add("modooscuro");
       if(isChecked){
-        he.style.backgroundColor="";
-        fo.style.backgroundColor="";
+        he.classList.remove("modooscuro");
+        fo.classList.remove("modooscuro");
       }
   }
 
