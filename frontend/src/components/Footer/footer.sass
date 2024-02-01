@@ -12,23 +12,43 @@ footer
         width: 100%
         ul
             list-style: none
-            width: 50%
+            width: 100%
+            li
+                margin-left: 25px
+                padding: 6px
+                font-family: $pop
+                padding-bottom: 6px
             li a
                 color: $whiteLigth
                 text-decoration: none
+
         #logos-rrss
             align-items: flex-end
             width: 50%
             img
                 margin: 10px
+            div p
+                font-size: 23px
 
-@media screen and (max-width: 576px) 
-  div#logos-rrss img
-        width: 30px
-        height: 30px
+@media screen and (max-width: 576px)
+    #logos-rrss
+        margin-left: 20px
+    .desaparecer
+        display: none
+    #logos-links
+        font-size: 20px 20px
+    
+    div#logos-rrss img
+        width: 70px
+        height: 70px
+    #logos-links ul 
+        li 
+            width: 136px
+            a
+                font-size: 16px
 
 @media screen and (min-width: 576px) and (max-width: 992px) 
-  div#logos-rrss img
+    div#logos-rrss img
         width: 40px
         height: 40px
 
