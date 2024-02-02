@@ -1,33 +1,25 @@
+// Importa tus estilos
 import "./userSettings.sass";
+import "../../components/Header/header.sass";
+
+// Importa los componentes necesarios
 import { FooterComponent } from "../../components/Footer/footer";
 import { SearchBarComponent } from "../../components/SearchBar/SearchBar";
+import { HeaderComponent } from "../../components/Header/header";
 import React, { useState } from 'react';
-export const UserSettingsPage = () => {
-  // JS
-  const [isChecked, setIsChecked] = useState(false);
-  const handleChange = () => {
-    setIsChecked(!isChecked);
-    oscurecer();
-  }
-  function oscurecer() {
-      let he=document.getElementsByTagName("header")[0];
-      let fo=document.getElementsByTagName("footer")[0];
-      he.classList.add("modooscuro");
-      fo.classList.add("modooscuro");
-      if(isChecked){
-        he.classList.remove("modooscuro");
-        fo.classList.remove("modooscuro");
-      }
-  }
 
+export const UserSettingsPage = () => {
+  // Estado para el tema oscuro o claro
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Función para cambiar el tema
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
   // HTML
   return (
     <>
-      <header>
-        <img src="/logo.png" alt="" id="logo" />
-        <SearchBarComponent></SearchBarComponent>
-        <img src="/circle-user.png" alt="" id="user" />
-      </header>
+      <HeaderComponent darkMode={darkMode}/>
       <div className="d-flex flex-column align-items-center p-4 settings-container">
         <div className="d-flex flex-column justify-content-center align-items-center p-3 sm-mx-300 recuadro">
           <div className="d-flex flex-column align-items-center">
@@ -73,8 +65,8 @@ export const UserSettingsPage = () => {
                       type="checkbox"
                       className="form-check-input"
                       id="theme"
-                      checked={isChecked}
-                      onChange={handleChange}
+                      checked={darkMode}
+                      onChange={toggleDarkMode}
                     />
                     <label className="form-check-label" for="theme">
                       Dark Theme
