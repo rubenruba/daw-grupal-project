@@ -17,7 +17,7 @@ export const FooterComponent = () => {
                     <li><a href="#">Legal</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="/contact-us">Contact Us</a></li>
                     <li><a href="#">Cookie Settings</a></li>
                     <li><a href="#">Cookie Policy</a></li>
                 </ul>

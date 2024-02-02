@@ -9,6 +9,7 @@ import { CreatePostPage } from './pages/CreatePost/createpost';
 import { Favorites } from './pages/SearchAndFavorites/search_favorites';
 import { AdminUsersPage } from './pages/AdminUsers/adminUsers';
 import { UserSettingsPage } from './pages/UserSettings/userSettings';
+import { ContactUs } from './pages/ContacUs/contactus';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
       <Route path="search-and-favorites" element={ <Favorites/> } />
       <Route path="admin-users" element={ <AdminUsersPage/> } />
       <Route path="user-settings" element={ <UserSettingsPage/> } />
+      <Route path="contact-us" element={ <ContactUs/> } />
   </Routes>
 </BrowserRouter>
 );
