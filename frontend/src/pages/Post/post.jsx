@@ -1,10 +1,30 @@
 import './post.sass';
 import { FooterComponent } from '../../components/Footer/footer';
 import { HeaderComponent } from '../../components/Header/header';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 
 export const PostPage = () => {
   // JS
+  const urlPost = "http://localhost/testFinalProjects/retrieveData/getOnePost.php";
+  const postId = useParams('postId');
+  const [post, setPost] = useState();
+
+  useEffect(() => {
+    fetch(`${urlPost}?postId=${postId.postId}`)
+    .then((response) => {
+      if(!response.ok){
+        throw new Error('Post Not found');
+      }
+    })
+    .then((data) => {
+      setPost(data);
+    })
+    .catch((error) => {
+      console.log("ERROR", error);
+    })
+  }, [])
   
   // HTML
   return (
