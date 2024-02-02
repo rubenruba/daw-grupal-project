@@ -1,5 +1,6 @@
 import './post.sass';
 import { FooterComponent } from '../../components/Footer/footer';
+import { HeaderComponent } from '../../components/Header/header';
 
 
 export const PostPage = () => {
@@ -8,6 +9,7 @@ export const PostPage = () => {
   // HTML
   return (
     <>
+    <HeaderComponent></HeaderComponent>
       <aside class="aside">
         <ul>
           <li><a href="#">Etiqueta 1</a></li>
