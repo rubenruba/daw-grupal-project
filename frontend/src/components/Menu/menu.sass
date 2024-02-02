@@ -1,0 +1,29 @@
+@import "../../styles/variables.sass"
+
+.menu-container 
+    position: relative
+    .menu 
+        position: absolute
+        left: -30px
+        display: none
+        background-color: $greenLigth
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+        border: 1px solid $blueLigth
+        list-style: none
+        padding: 0
+        margin: 0
+        color: $blueLigth
+        li 
+            padding: 10px 20px
+            cursor: pointer
+        a 
+            text-decoration: none
+            color: $blueLigth
+        li:hover, li:hover a
+            background-color: $blueLigth
+            color: $greenLigth
+    #user
+        margin: 20px 20px
+        width: 50px
+.menu-container:hover .menu 
+    display: block
