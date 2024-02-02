@@ -2,6 +2,7 @@ import "./landing.sass";
 import { SearchBarComponent } from "../../components/SearchBar/SearchBar";
 import { FooterComponent } from "../../components/Footer/footer";
 import { Link } from 'react-router-dom';
+import { HeaderComponent } from "../../components/Header/header";
 
 
 export const LandginPage = () => {
@@ -10,11 +11,7 @@ export const LandginPage = () => {
   // HTML
   return (
     <>
-      <header>
-        <img src="/logo.png" alt="" id="logo" />
-        <SearchBarComponent></SearchBarComponent>
-        <img src="/circle-user.png" alt="" id="user" />
-      </header>
+      <HeaderComponent></HeaderComponent>
       <div className="row-fluid d-flex flex-row flex-wrap align-items-center justify-content-center p-4 main">
         <div className="d-flex flex-row flex-wrap justify-content-center">
           <div className="d-flex flex-column justify-content-center align-items-center p-3 mx-5 mt-5 box1">

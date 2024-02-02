@@ -2,6 +2,7 @@ import "./userSettings.sass";
 import { FooterComponent } from "../../components/Footer/footer";
 import { SearchBarComponent } from "../../components/SearchBar/SearchBar";
 import React, { useState } from 'react';
+import { HeaderComponent } from "../../components/Header/header";
 export const UserSettingsPage = () => {
   // JS
   const [isChecked, setIsChecked] = useState(false);
@@ -23,11 +24,7 @@ export const UserSettingsPage = () => {
   // HTML
   return (
     <>
-      <header>
-        <img src="/logo.png" alt="" id="logo" />
-        <SearchBarComponent></SearchBarComponent>
-        <img src="/circle-user.png" alt="" id="user" />
-      </header>
+      <HeaderComponent></HeaderComponent>
       <div className="d-flex flex-column align-items-center p-4 settings-container">
         <div className="d-flex flex-column justify-content-center align-items-center p-3 sm-mx-300 recuadro">
           <div className="d-flex flex-column align-items-center">
