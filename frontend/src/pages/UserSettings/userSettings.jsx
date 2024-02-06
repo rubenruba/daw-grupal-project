@@ -31,9 +31,9 @@ export const UserSettingsPage = () => {
             <img src="/circle-user-regular.svg" alt="user" id="user" />
             <h4>Welcome, name</h4>
           </div>
-          <div class="container mt-3">
+          <div className="container mt-3">
             <form action="#">
-              <div class="row mb-3">
+              <div className="row mb-3">
                 <div className="col">
                   <label htmlFor="#">Nombre</label>
                   <br />
@@ -46,7 +46,7 @@ export const UserSettingsPage = () => {
                 </div>
               </div>
 
-              <div class="row mb-3">
+              <div className="row mb-3">
                 <div className="col">
                   <label htmlFor="#">Email</label>
                   <br />
@@ -65,7 +65,7 @@ export const UserSettingsPage = () => {
                   </button>
                 </div>
                 <div className="col">
-                  <div class="form-check form-switch d-flex flex-row justify-content-center mt-3">
+                  <div className="form-check form-switch d-flex flex-row justify-content-center mt-3">
                     <input
                       type="checkbox"
                       className="form-check-input"
@@ -79,10 +79,10 @@ export const UserSettingsPage = () => {
                   </div>
                 </div>
               </div>
-              <div class="input-group d-flex flex-column justify-content-start mt-4">
+              <div className="input-group d-flex flex-column justify-content-start mt-4">
                 <label>About me</label>
                 <textarea
-                  class="form-control w-100"
+                  className="form-control w-100"
                   aria-label="With textarea"
                 ></textarea>
               </div>

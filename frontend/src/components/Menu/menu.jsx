@@ -12,7 +12,7 @@ export const MenuComponent = () => {
 
     // HTML
     return (
-        <div class="menu-container">
+        <div className="menu-container">
             <img src="/circle-user.png" alt="user" id='user'/>
             <ul className='menu'>
                 <li><a href="/create-post">New post</a></li>
