@@ -11,32 +11,32 @@ import { AdminUsersPage } from "./pages/AdminUsers/adminUsers";
 import { UserSettingsPage } from "./pages/UserSettings/userSettings";
 import { PostPage } from './pages/Post/post';
 
-// const urlLogged = "http://localhost/testFinalProjects/isLogged.php";
-// const urlAdmin = "http://localhost/testFinalProjects/isAdmin.php";
-// const cookies = document.cookie.split(";");
+const urlLogged = "http://localhost/testFinalProjects/isLogged.php";
+const urlAdmin = "http://localhost/testFinalProjects/isAdmin.php";
+const cookies = document.cookie.split(";");
 
-// let userId;
+let userId;
 
-// cookies.forEach((cookie) => {
-//   if (cookie.includes("userId")) userId = cookie.split("=")[1];
-// });
+cookies.forEach((cookie) => {
+  if (cookie.includes("userId")) userId = cookie.split("=")[1];
+});
 
-// Promise.all([
-//   fetch(`${urlLogged}?userId=${userId}`, { method: "GET" }),
-//   fetch(`${urlAdmin}?userId=${userId}`, { method: "GET" }),
-// ])
-//   .then((responses) =>
-//     Promise.all(responses.map((response) => response.json()))
-//   )
-//   .then((data) => {
-//     const [loggedData, adminData] = data;
-//     const isLogged = loggedData;
-//     const isAdmin = adminData;
-//     renderApp(isLogged, isAdmin);
-//   })
-//   .catch((error) => {
-//     console.error("Error fetching data:", error);
-//   });
+Promise.all([
+  fetch(`${urlLogged}?userId=${userId}`, { method: "GET" }),
+  fetch(`${urlAdmin}?userId=${userId}`, { method: "GET" }),
+])
+  .then((responses) =>
+    Promise.all(responses.map((response) => response.json()))
+  )
+  .then((data) => {
+    const [loggedData, adminData] = data;
+    const isLogged = loggedData;
+    const isAdmin = adminData;
+    renderApp(isLogged, isAdmin);
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
 
 const renderApp = (isLogged, isAdmin) => {
   const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -63,5 +63,3 @@ const renderApp = (isLogged, isAdmin) => {
     </BrowserRouter>
   );
 };
-
-renderApp(true, true)
