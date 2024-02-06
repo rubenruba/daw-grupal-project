@@ -52,7 +52,7 @@ const renderApp = (isLogged, isAdmin) => {
         )}
         {isLogged && (
           <>
-            <Route path="post" element={ <PostPage/> } />
+            <Route path="post/:postId" element={ <PostPage/> } />
             <Route path="create-post" element={<CreatePostPage />} />
             <Route path="search-and-favorites" element={<Favorites />} />
             <Route path="user-settings" element={<UserSettingsPage />} />

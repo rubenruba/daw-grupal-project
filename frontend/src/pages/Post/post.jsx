@@ -8,11 +8,12 @@ import { useEffect, useState } from 'react';
 export const PostPage = () => {
   // JS
   const urlPost = "http://localhost/testFinalProjects/retrieveData/getOnePost.php";
-  const postId = useParams('postId');
+  const { postId } = useParams('postId');
   const [post, setPost] = useState();
 
   useEffect(() => {
-    fetch(`${urlPost}?postId=${postId.postId}`)
+    console.log(postId)
+    fetch(`${urlPost}?postId=${postId}`)
     .then((response) => {
       if(!response.ok){
         throw new Error('Post Not found');
