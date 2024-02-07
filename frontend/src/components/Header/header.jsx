@@ -12,7 +12,7 @@ export const HeaderComponent = ({ darkMode }) => {
                 <input type="text" placeholder=' Search... ' className='form-control me-4' id='cabe' />
                 <img src="/lupa.png" alt="" />
             </div>
-            <img src="/circle-user.png" alt="" id='user' />
+            <img src="/circle-user.png" alt="" id='user-header' />
         </header>
     )
 }
