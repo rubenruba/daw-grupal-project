@@ -3,7 +3,15 @@ import { SearchBarComponent } from '../SearchBar/SearchBar';
 
 export const FooterComponent = () => {
     // JS
-
+        function insta(){
+            window.location.href="https://instagram.com";
+        }
+        function twitter(){
+            window.location.href="https://twitter.com/";
+        }
+        function tiktok(){
+            window.location.href="https://tiktok.com/";
+        }
 
     // HTML
     return (
@@ -24,15 +32,15 @@ export const FooterComponent = () => {
                 <div id='logos-rrss' className='d-flex flex-column me-5'>
                     <div className='d-flex align-items-center'>
                         <p className='mt-3 me-3 desaparecer'>Instagram</p>
-                        <img src="/img/instagram.png" alt="" />
+                        <img src="/img/instagram.png" alt="" onClick={insta} />
                     </div>
                     <div className='d-flex align-items-center'>
                         <p className='mt-3 me-4 desaparecer'>Twitter</p>
-                        <img src="/img/twitter.png" alt="" />
+                        <img src="/img/twitter.png" alt="" onClick={twitter}/>
                     </div>
                     <div className='d-flex align-items-center'>
                         <p className='mt-3 me-4 desaparecer'>TikTok</p>
-                        <img src="/img/TikTok.png" alt="" />
+                        <img src="/img/TikTok.png" alt="" onClick={tiktok} />
                     </div>
                 </div>
             </div>
