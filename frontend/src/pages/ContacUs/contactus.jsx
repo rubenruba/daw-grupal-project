@@ -6,7 +6,6 @@ import './contactus.sass'
 export const ContactUs = () => {
     const [email, setEmail] = useState('');
     const [validEmail, setValidEmail] = useState(true);
-
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     };
@@ -40,7 +39,7 @@ export const ContactUs = () => {
                     </div>
                     <div className="form-group mb-5">
                         <label htmlFor="mensaje">Mensaje:</label>
-                        <textarea className="form-control" id="mensaje" rows="3" placeholder="Ingrese su mensaje"></textarea>
+                        <textarea className="form-control" id="mensaje" rows="3" placeholder="Ingrese su mensaje" maxLength={300}></textarea>
                     </div>
                     <div className='d-flex justify-content-center' >
                         <button type="submit" className="btn-primary">Enviar</button>
