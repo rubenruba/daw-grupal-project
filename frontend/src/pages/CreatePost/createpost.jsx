@@ -1,6 +1,6 @@
 import { FooterComponent } from '../../components/Footer/footer';
 import { HeaderComponent } from '../../components/Header/header';
-import './createpost.sass';
+import './createpost.sass'
 
 export const CreatePostPage = () => {
     // JS
@@ -26,7 +26,7 @@ export const CreatePostPage = () => {
                             <p className='mt-5' id='parr'>Adjuntar archivos</p>
                             {/* TO DO - Add an input to insert files */}
                             <input type="file" id="fileInput" name='files[]' multiple/>
-                            <img src="/adjuntar.png" id='adjunta alt="" />
+                            <img src="/adjuntar.png" id='adjunta' alt="" />
                         </div>
                         <div className='d-flex flex-column'>
                             <button id='btn1' className='p-2'>
