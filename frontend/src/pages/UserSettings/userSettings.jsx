@@ -1,21 +1,12 @@
-// Importa tus estilos
-import "./userSettings.sass";
-import "../../components/Header/header.sass";
-
-// Importa los componentes necesarios
+import React from 'react';
 import { FooterComponent } from "../../components/Footer/footer";
-import { SearchBarComponent } from "../../components/SearchBar/SearchBar";
 import { HeaderComponent } from "../../components/Header/header";
-import React, { useState } from 'react';
+import "./userSettings.sass";
+
 
 export const UserSettingsPage = () => {
-  // Estado para el tema oscuro o claro
-  const [darkMode, setDarkMode] = useState(false);
+  //JS 
 
-  // Función para cambiar el tema
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
   // HTML
   return (
     <>
@@ -58,20 +49,6 @@ export const UserSettingsPage = () => {
                   <button type="submit" className="btn btn-primary btn-md">
                     Reset Password
                   </button>
-                </div>
-                <div className="col">
-                  <div className="form-check form-switch d-flex flex-row justify-content-center mt-3">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="theme"
-                      checked={darkMode}
-                      onChange={toggleDarkMode}
-                    />
-                    <label className="form-check-label" for="theme">
-                      Dark Theme
-                    </label>
-                  </div>
                 </div>
               </div>
               <div className="input-group d-flex flex-column justify-content-start mt-4">
