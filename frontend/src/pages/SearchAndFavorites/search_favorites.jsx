@@ -1,37 +1,55 @@
+import { useEffect, useState } from "react";
 import { FavoriteArea } from "../../components/FavoritesArea/FavoriteArea";
 import { FooterComponent } from "../../components/Footer/footer";
+import { HeaderComponent } from "../../components/Header/header";
 import "./search_favorites.sass";
 
 export const Favorites = () => {
-    // JS
+  // JS
+  const url = "http://localhost/testFinalProjects/retrieveData/getAllPost.php";
+  const [posts, setPosts] = useState([]);
 
-    // HTML
-    return (
-        <>
+  useEffect(() => {
+    const fetchPosts = () => {
+      fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Error al obtener los usuarios");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setPosts(data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    };
 
-            <header>
-                <img src='/logo.png' alt="" id='logo' />
-                <div className='d-flex justify-content-between d-none d-sm-flex' id='search-container'>
-                    <input type="text" placeholder=' Search... ' className='form-control me-4' id='cabe' />
-                    <img src="/lupa.png" alt="" />
-                </div>
-                <img src="/circle-user.png" alt="" id='user' />
-            </header>
-            <div className="favorites-conatiner">
-                <div className="filter ms-lg-5">
-                    <img src="/filtro.png" alt="" />
-                </div>
+    fetchPosts();
+  }, []);
 
-              <FavoriteArea></FavoriteArea>
-              <FavoriteArea></FavoriteArea>
-              <FavoriteArea></FavoriteArea>
-              
+  // HTML
+  return (
+    <>
+      <HeaderComponent></HeaderComponent>
 
-                <FooterComponent></FooterComponent>
-            </div>
-           
+      <div className="favorites-conatiner">
+        <div className="filter ms-lg-5">
+          <img src="/filtro.png" alt="" />
+        </div>
 
+        {posts.map((post) => {
+          return <FavoriteArea key={post.PostId} post={post}></FavoriteArea>;
+        })}
 
-        </>
-    );
+        <FooterComponent></FooterComponent>
+      </div>
+    </>
+  );
 };
