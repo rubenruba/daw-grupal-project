@@ -1,6 +1,7 @@
 <?php
     include '../variables.php';
     include './insertFiles.php';
+    include './addLabel.php';
 
     $text = $_POST['postText'];
     $title = $_POST['title'];
@@ -23,6 +24,7 @@
         $dbQuery = null;
 
         insertFiles($userId);
+        insertLabel($userId);
 
     } catch (PDOException $e) {
         echo "ERROR: ".$e;

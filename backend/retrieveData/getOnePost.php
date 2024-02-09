@@ -24,7 +24,48 @@
         $post = array();
 
         while ($row = $dbQuery->fetch(PDO::FETCH_ASSOC)) {
-            $post[] = $row;
+            if (!isset($post['post'])) {
+                $post['post'] = array(
+                    'PostId' => $row['PostId'],
+                    'PostUserId' => $row['PostUserId'],
+                    'PostTitle' => $row['PostTitle'],
+                    'PostText' => $row['PostText'],
+                    'PostDate' => $row['PostDate'],
+                    'Files' => array(),
+                    'Comments' => array(),
+                    'Labels' => array()
+                );
+            }
+
+            if (!empty($row['FileId'])) {
+                $post['post']['Files'][] = array(
+                    'FileId' => $row['FileId'],
+                    'FileType' => $row['FileType'],
+                    'FileName' => $row['FileName']
+                );
+            }
+
+            if (!empty($row['CommentId'])) {
+                $post['post']['Comments'][] = array(
+                    'CommentId' => $row['CommentId'],
+                    'CommentUserId' => $row['CommentUserId'],
+                    'CommentText' => $row['CommentText'],
+                    'CommentDate' => $row['CommentDate']
+                );
+            }
+
+            if (!empty($row['LabelId'])) {
+                $post['post']['Labels'][] = array(
+                    'LabelId' => $row['LabelId'],
+                    'Name' => $row['Name']
+                );
+            }
+        }
+
+        foreach ($post as &$item) {
+            $item['Files'] = array_unique($item['Files'], SORT_REGULAR);
+            $item['Comments'] = array_unique($item['Comments'], SORT_REGULAR);
+            $item['Labels'] = array_unique($item['Labels'], SORT_REGULAR);
         }
 
         $post = json_encode($post);
