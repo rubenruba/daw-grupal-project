@@ -1,33 +1,5 @@
 @import ../../styles/variables.sass
 
-header
-    background-color: $greenLigth
-    width: 100%
-    height: 15vh
-    display: flex
-    justify-content: space-between
-    align-items: center
-    #cabe
-        width: 100%
-        height: 40px
-        border: none
-        border-radius: 8px
-        background-color: $greenLigth
-        border-color: $blueLigth
-        padding: 10px
-        position: relative
-    #logo
-        height: 12vh
-    #user
-        margin: 20px
-    #search-container
-        display: none
-        border: 2px solid $blueLigth
-        width: 30%
-        border-radius: 8px 
-        
-//HASTA AQUI LA CABECERA
-
 .create-post-container
     font-family: $pop
     background-color: $grey
@@ -41,21 +13,27 @@ header
     #contenido
         display: flex
         flex-direction: column
-        margin-left: 20%    
-        margin-right: 20%
+        margin: 0 20%    
         textarea 
             resize: none
             border-radius: 8px
         input
             border-radius: 8px
             height: 50px
+    .labels-container
+        margin: 50px 20% 0 
+        .labels
+            gap: 30px
+        select
+            background-color: $blueLigth
+            border: none
+            color: $whiteLigth
+            width: 125px
+            padding: 5px 10px
+            border-radius: 10px
     #enlace
-        display: flex
-        flex-direction: column
-        align-content: center
-        justify-content: center
-        align-items: center
-        div:first-of-type img
+        margin: 0 20%    
+        img
             height: 100px
             width: 100px
             margin-left: 25%
@@ -63,15 +41,5 @@ header
             background-color: $blueLigth
             border: none
             color: $whiteLigth
-        #btn1
-            border-radius: 8px
-            width:100%
-        #btn2
-            width:150px
+            width: 150px
             border-radius: 16px
-
-
-  
-
-        
-        

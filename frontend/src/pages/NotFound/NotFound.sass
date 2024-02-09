@@ -1,0 +1,58 @@
+@import '../../styles/variables.sass'
+
+$bg: #313942
+$ghost: #528cce
+$heading: #e7ebf2
+
+.found-container
+  background-color: $purpleLigth
+  font-family: $pop
+  align-items: center
+  display: flex
+  flex-direction: column
+  height: 100vh
+  justify-content: center
+  text-align: center
+  a
+    color: $greenLigth
+
+#title
+  color: $greenLigth
+  font-size: 12.5rem
+  letter-spacing: .10em
+  margin: .025em 0
+  text-shadow: .05em .05em 0 rgba(0,0,0,.25)
+  white-space: nowrap
+
+  @media (max-width: 30rem)
+    font-size: 8.5rem
+
+  & > span
+    animation: spooky 2s alternate infinite linear
+    color: $ghost
+    display: inline-block
+
+#title2
+  color: $heading
+  margin-bottom: .40em
+
+#context
+  color: #ccc
+  margin-top: 0
+
+#ghost
+  width: 100px
+  height: 100px
+
+@keyframes spooky
+  from
+    transform: translateY(.15em) scaleY(.90)
+
+  to
+    transform: translateY(-.15em)
+
+@media only screen and (min-width: 900px)
+  #ghost
+    width: 250px
+    height: 250px
+
