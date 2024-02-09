@@ -2,7 +2,7 @@ import { ButtonsNavComponent } from '../ButtonsNav/buttonsNav';
 import { MenuComponent } from '../Menu/menu';
 import './header.sass';
 
-export const HeaderComponent = () => {
+export const HeaderComponent = ({ darkMode }) => {
     // JS
     const cookies = document.cookie.split(";");
 
@@ -22,7 +22,7 @@ export const HeaderComponent = () => {
 
     // HTML
     return (
-        <header>
+        <header className={`header ${darkMode ? 'darkmode' : 'lightmode'} `}>
             <img src='/logo.png' alt="" id='logo' />
             <img src='/logo_movil.png' alt="" id='logo2'/>
             <div className='d-flex justify-content-between d-none d-sm-flex' id='search-container'>

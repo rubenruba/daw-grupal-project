@@ -12,6 +12,7 @@ import { UserSettingsPage } from "./pages/UserSettings/userSettings";
 import { PostPage } from './pages/Post/post';
 import { NotFoundPage } from './pages/NotFound/NotFound';
 import { ResetPasswordPage } from './pages/ResetPassword/resetpassword';
+import { ContactUs } from './pages/ContacUs/contactus';
 
 const urlLogged = "http://localhost/testFinalProjects/isLogged.php";
 const urlAdmin = "http://localhost/testFinalProjects/isAdmin.php";
@@ -47,6 +48,7 @@ const renderApp = (isLogged, isAdmin) => {
       <Routes>
         <Route path="/" element={<LandginPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="contact-us" element={ <ContactUs/> } />
         {!isLogged && (
           <>
             <Route path="login" element={<LoginPage />} />
