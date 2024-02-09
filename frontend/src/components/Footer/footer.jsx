@@ -8,11 +8,11 @@ export const FooterComponent = () => {
     // HTML
     return (
         <footer>
-            <div id='searchbar-movil' class="d-sm-none d-flex flex-row justify-content-center">
+            <div id='searchbar-movil' className="d-sm-none d-flex flex-row justify-content-center">
                 <SearchBarComponent></SearchBarComponent>
             </div>
             <h2 className='ms-5 mt-4 fw-bold'>Legal advise</h2>
-            <div id="logos-links" class="d-flex flex-row ">
+            <div id="logos-links" className="d-flex flex-row ">
                 <ul>
                     <li><a href="#">Legal</a></li>
                     <li><a href="#">Privacy Policy</a></li>
