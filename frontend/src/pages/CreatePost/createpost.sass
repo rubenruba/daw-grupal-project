@@ -1,4 +1,5 @@
 @import ../../styles/variables.sass
+
 .create-post-container
     font-family: $pop
     background-color: $grey
@@ -12,21 +13,27 @@
     #contenido
         display: flex
         flex-direction: column
-        margin-left: 20%    
-        margin-right: 20%
+        margin: 0 20%    
         textarea 
             resize: none
             border-radius: 8px
         input
             border-radius: 8px
             height: 50px
+    .labels-container
+        margin: 50px 20% 0 
+        .labels
+            gap: 30px
+        select
+            background-color: $blueLigth
+            border: none
+            color: $whiteLigth
+            width: 125px
+            padding: 5px 10px
+            border-radius: 10px
     #enlace
-        display: flex
-        flex-direction: column
-        align-content: center
-        justify-content: center
-        align-items: center
-        div:first-of-type img
+        margin: 0 20%    
+        img
             height: 100px
             width: 100px
             margin-left: 25%
@@ -34,15 +41,5 @@
             background-color: $blueLigth
             border: none
             color: $whiteLigth
-        #btn1
-            border-radius: 8px
-            width:100%
-        #btn2
-            width:150px
+            width: 150px
             border-radius: 16px
-
-
-  
-
-        
-        

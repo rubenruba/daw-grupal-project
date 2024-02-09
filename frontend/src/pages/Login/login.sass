@@ -1,7 +1,6 @@
 @import '../../styles/variables.sass'
 
 .login-container
-    animation: fadeIn 0.7s ease-in-out forwards
     background: $purpleLigth
     color: $blueLigth
     height: 100vh
@@ -49,13 +48,7 @@
         a
             color: $blueLigth
 
+@media (min-width: 768px)
+    form .invalid-feedback 
+        margin-left: 180px
 
-    @media (min-width: 768px)
-        form .invalid-feedback 
-            margin-left: 180px
-
-@keyframes fadeIn 
-    from 
-        opacity: 0.5
-    to 
-        opacity: 1

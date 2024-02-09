@@ -1,0 +1,133 @@
+@import '../../styles/variables'
+body
+    margin: 0
+    padding: 0
+    font-family: $pop
+#container-post, #comentarios-users, #comentar-usuario
+    width: 80vw
+    border-right: black solid 1px
+    margin: 0
+    margin-left: 5vw
+    padding: 0
+#post-pctab, #post-movil
+    div
+        button
+            height: 50px
+            width: 50px
+            border-radius: 16px
+            color: black
+            border: none
+            font-size: 11px
+            margin-right: 10px
+            text-align: center
+            padding-left: 7px
+            padding-right: 7px
+        .simbolos
+            display: flex
+            flex-direction: column
+            width: 5%
+            .star
+                width: 40px
+                border: 0
+                padding: 0
+                background-color: transparent
+                img
+                    width: 100%
+                    margin: 0
+            img
+                margin-bottom: 13px
+                width: 40px
+#textopost
+    width: 70%
+#comentarios
+    border-bottom: black solid 1px
+    h2
+        display: inline
+    .comentario
+        border-bottom: black dashed 1px
+    .comentario:last-child
+        border: 0
+.aside
+    position: absolute
+    right: 0
+    width: 13vw
+    ul
+        list-style: none
+        li
+            border: $blueLigth solid 1px
+            border-radius: 5px
+            padding: 20px
+            width: fit-content
+            background-color: $blueLigth
+            margin: 5px
+            a
+                text-decoration: none
+                color: #F3F3F3
+                font-size: large
+#comentar-usuario
+    margin-bottom: 2vh
+
+@media screen and (max-width: 576px)
+    #container-post, #comentarios-users, #comentar-usuario
+        width: 90vw
+        border-right: 0
+        margin: 0
+        margin-left: 5vw
+        margin-right: 5vw
+        padding: 0
+    #post-movil
+        div
+            justify-content: center
+            align-items: center
+            #archivos
+                width: 50vw
+                h5
+                    font-size: small
+                a
+                    font-size: small
+            #textopost
+                width: 100%
+                font-size: medium
+                text-align: center
+        #etiquetas-movil
+            margin: 15px
+            a
+                border: $blueLigth solid 1px
+                border-radius: 5px
+                padding: 5px
+                width: fit-content
+                background-color: $blueLigth
+                margin: 5px
+                color: $whiteLigth
+                text-decoration: none
+
+@media screen and (min-width: 576px) and (max-width: 992px)
+    #container-post, #comentarios-users, #comentar-usuario
+        width: 70vw
+        border-right: black solid 1px
+        margin: 0
+        margin-left: 5vw
+        padding: 0
+    .aside
+        position: absolute
+        right: 5vw
+        width: 20vw
+        ul
+            list-style: none
+            li
+                border: $blueLigth solid 1px
+                border-radius: 5px
+                padding: 15px
+                width: 100%
+                background-color: $blueLigth
+                margin: 5px
+                a
+                    text-decoration: none
+                    color: #F3F3F3
+                    font-size: medium
+    #post-pctab
+        div
+            #archivos
+                margin: 5vw
+                height: 30vh
+                

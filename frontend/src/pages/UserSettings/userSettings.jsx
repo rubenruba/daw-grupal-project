@@ -19,7 +19,7 @@ export const UserSettingsPage = () => {
   // HTML
   return (
     <>
-      <HeaderComponent darkMode={darkMode}/>
+      <HeaderComponent></HeaderComponent>
       <div className="d-flex flex-column align-items-center p-4 settings-container">
         <div className="d-flex flex-column justify-content-center align-items-center p-3 sm-mx-300 recuadro">
           <div className="d-flex flex-column align-items-center">
