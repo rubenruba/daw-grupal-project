@@ -10,6 +10,7 @@ import { Favorites } from "./pages/SearchAndFavorites/search_favorites";
 import { AdminUsersPage } from "./pages/AdminUsers/adminUsers";
 import { UserSettingsPage } from "./pages/UserSettings/userSettings";
 import { PostPage } from './pages/Post/post';
+import { NotFoundPage } from './pages/NotFound/NotFound';
 
 const urlLogged = "http://localhost/testFinalProjects/isLogged.php";
 const urlAdmin = "http://localhost/testFinalProjects/isAdmin.php";
@@ -44,6 +45,7 @@ const renderApp = (isLogged, isAdmin) => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandginPage />} />
+        <Route path="*" element={<NotFoundPage />} />
         {!isLogged && (
           <>
             <Route path="login" element={<LoginPage />} />
