@@ -26,9 +26,13 @@ export const FavoriteArea = (post) => {
         fetch(`${removeFav}?postId=${post.post.PostId}`, { method: 'GET' });
     }
 
+    const toPost = () => {
+        window.location = 'post/' + post.post.PostId;
+    }
+
     // HTML
     return (
-        <div className="container-f">
+        <div className="container-f" onClick={() => toPost()}>
             <div className="simbolos">
                 <img src="/preguntas-mas-frecuentes.png" alt="" />
                 <button className='star' onClick={changePath}>
@@ -36,7 +40,8 @@ export const FavoriteArea = (post) => {
                 </button>
             </div>
             <div className="favorite-text">
-                <p>{post.post.Title.toUpperCase()}</p>
+                <h2>{post.post.Title.toUpperCase()}</h2>
+                <p>{post.post.Text}</p>
             </div>
             <div className="container-tag">
                 <button>Etiqueta1</button>
