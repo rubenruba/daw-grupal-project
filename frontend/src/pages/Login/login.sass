@@ -5,13 +5,14 @@
     color: $blueLigth
     height: 100vh
     font-family: $pop
-    background: url('../../../public/libreria.jpg') no-repeat center center fixed
+    background: url('../../../public/libreria_login.jpg') no-repeat center center fixed
     background-size: 100% 100%
     z-index: -1
     width: 100%
     height: 100vh
+
     form
-        background-color:$greenLigth
+        background-color: $greenLigth
         width: 80vw
         height: 60%
         max-width: 600px
@@ -20,15 +21,21 @@
         justify-content: center
         align-items: center
         flex-direction: column
+
         input
             border-radius: 16px
             border: none
             width: 70%
             height: 30px
-            margin-bottom: 8px 
+            margin-bottom: 8px
+
+        .invalid-feedback
+            margin-left: 80px 
+
         label
             padding-left: 16%
             width: 100%
+
         .btn
             border-radius: 16px
             background-color: $blueLigth
@@ -37,5 +44,11 @@
             padding: 5px
             width: 220px
             margin-top: 20px
+
         a
             color: $blueLigth
+
+@media (min-width: 768px)
+    form .invalid-feedback 
+        margin-left: 180px
+

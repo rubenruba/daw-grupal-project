@@ -1,26 +1,21 @@
+// Importa tus estilos
 import "./userSettings.sass";
+import "../../components/Header/header.sass";
+
+// Importa los componentes necesarios
 import { FooterComponent } from "../../components/Footer/footer";
 import { SearchBarComponent } from "../../components/SearchBar/SearchBar";
-import React, { useState } from 'react';
 import { HeaderComponent } from "../../components/Header/header";
-export const UserSettingsPage = () => {
-  // JS
-  const [isChecked, setIsChecked] = useState(false);
-  const handleChange = () => {
-    setIsChecked(!isChecked);
-    oscurecer();
-  }
-  function oscurecer() {
-      let he=document.getElementsByTagName("header")[0];
-      let fo=document.getElementsByTagName("footer")[0];
-      he.classList.add("modooscuro");
-      fo.classList.add("modooscuro");
-      if(isChecked){
-        he.classList.remove("modooscuro");
-        fo.classList.remove("modooscuro");
-      }
-  }
+import React, { useState } from 'react';
 
+export const UserSettingsPage = () => {
+  // Estado para el tema oscuro o claro
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Función para cambiar el tema
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
   // HTML
   return (
     <>
@@ -70,8 +65,8 @@ export const UserSettingsPage = () => {
                       type="checkbox"
                       className="form-check-input"
                       id="theme"
-                      checked={isChecked}
-                      onChange={handleChange}
+                      checked={darkMode}
+                      onChange={toggleDarkMode}
                     />
                     <label className="form-check-label" for="theme">
                       Dark Theme
