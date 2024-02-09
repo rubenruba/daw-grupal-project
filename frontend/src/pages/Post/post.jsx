@@ -126,7 +126,7 @@ export const PostPage = () => {
         <form action={urlComment} method="post">
           <div className="mb-3">
             <label for="comentario" className="form-label">Comentario</label>
-            <textarea className="form-control" id="comentario" name="comment" rows="3" required></textarea>
+            <textarea className="form-control" id="comentario" name="comment" rows="3" required maxLength='384'></textarea>
             <input type="text" className='d-none' value={postId} name='postId'/>
           </div>
           <button type="submit" className="btn btn-primary" id="boton-comentario">Enviar</button>
