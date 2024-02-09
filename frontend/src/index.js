@@ -11,6 +11,7 @@ import { AdminUsersPage } from "./pages/AdminUsers/adminUsers";
 import { UserSettingsPage } from "./pages/UserSettings/userSettings";
 import { PostPage } from './pages/Post/post';
 import { NotFoundPage } from './pages/NotFound/NotFound';
+import { ResetPasswordPage } from './pages/ResetPassword/resetpassword';
 
 const urlLogged = "http://localhost/testFinalProjects/isLogged.php";
 const urlAdmin = "http://localhost/testFinalProjects/isAdmin.php";
@@ -50,6 +51,7 @@ const renderApp = (isLogged, isAdmin) => {
           <>
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
+            <Route path="reset-password" element={ <ResetPasswordPage/> } />
           </>
         )}
         {isLogged && (
