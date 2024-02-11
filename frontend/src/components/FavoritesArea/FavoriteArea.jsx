@@ -1,7 +1,7 @@
 import './FavoriteArea.sass';
 import React, { useState } from 'react';
 
-export const FavoriteArea = (post) => {
+export const FavoriteArea = ({post}) => {
     // JS
     const addFav = 'http://localhost/testFinalProjects/insertData/addFavourite.php';
     const removeFav = 'http://localhost/testFinalProjects/deleteFavourite.php';
@@ -18,16 +18,15 @@ export const FavoriteArea = (post) => {
     }
 
     const addFavourite = () => {
-        console.log(post.post.PostId);
-        fetch(`${addFav}?postId=${post.post.PostId}`, { method: 'GET' });
+        fetch(`${addFav}?postId=${post.PostId}`, { method: 'GET' });
     }
 
     const deleteFavourite = () => {
-        fetch(`${removeFav}?postId=${post.post.PostId}`, { method: 'GET' });
+        fetch(`${removeFav}?postId=${post.PostId}`, { method: 'GET' });
     }
 
     const toPost = () => {
-        window.location = 'post/' + post.post.PostId;
+        window.location = 'post/' + post.PostId;
     }
 
     // HTML
@@ -40,8 +39,8 @@ export const FavoriteArea = (post) => {
                 </button>
             </div>
             <div className="favorite-text">
-                <h2>{post.post.Title.toUpperCase()}</h2>
-                <p>{post.post.Text}</p>
+                <h2>{post.Title.toUpperCase()}</h2>
+                <p>{post.Text}</p>
             </div>
             <div className="container-tag">
                 <button>Etiqueta1</button>

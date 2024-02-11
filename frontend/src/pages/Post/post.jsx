@@ -108,7 +108,7 @@ export const PostPage = () => {
             </ul> {/* TO DO - Not working in mobile */}
           </div>
         </div>
-        <p><a href="">Juan789</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Asked 2 years and 3 months ago</p>
+        <p><a href="">{post.PostUsername}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Asked 2 years and 3 months ago</p>
       </div>
       <div className="container" id='comentarios-users'>
         <h2 className="mb-3">Respuestas</h2>

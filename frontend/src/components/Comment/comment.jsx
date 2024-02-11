@@ -1,8 +1,25 @@
 import "./comment.sass";
 
-export const CommentComponent = (commentProp) => {
+export const CommentComponent = ({comment}) => {
   // JS
-    const { comment } = commentProp;
+  const urlDelete = "http://localhost/testFinalProjects/deleteComment.php";
+  const cookies = document.cookie.split(";");
+
+  let userId;
+
+  cookies.forEach((cookie) => {
+    if (cookie.includes("userId")) userId = cookie.split("=")[1];
+  });
+
+  const checkComment = () => {
+    if(comment.CommentUserId === Number(userId)){
+      return <button onClick={deleteComment}>Delete</button>
+    }
+  }
+
+  const deleteComment = () => {
+    fetch(`${urlDelete}?commentId=${comment.CommentId}`, { method: 'DELETE' });
+  }
 
   // HTML
   return (
@@ -11,7 +28,7 @@ export const CommentComponent = (commentProp) => {
         <p className="mb-5">{comment.CommentText}</p>
       </div>
       <p>
-        <a href="">{comment.CommentUserId}</a>
+        <a href="">{comment.CommentUsername}</a> {checkComment()}
       </p>
     </div>
   );
