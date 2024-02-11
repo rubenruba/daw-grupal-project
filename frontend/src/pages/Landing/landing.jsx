@@ -1,5 +1,5 @@
 import "./landing.sass";
-import { SearchBarComponent } from "../../components/SearchBar/SearchBar";
+import { HeaderComponent } from "../../components/Header/header";
 import { FooterComponent } from "../../components/Footer/footer";
 import { Link } from 'react-router-dom';
 import { HeaderComponent } from "../../components/Header/header";

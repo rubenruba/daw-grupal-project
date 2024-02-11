@@ -1,26 +1,21 @@
+// Importa tus estilos
 import "./userSettings.sass";
+import "../../components/Header/header.sass";
+
+// Importa los componentes necesarios
 import { FooterComponent } from "../../components/Footer/footer";
 import { SearchBarComponent } from "../../components/SearchBar/SearchBar";
-import React, { useState } from 'react';
 import { HeaderComponent } from "../../components/Header/header";
-export const UserSettingsPage = () => {
-  // JS
-  const [isChecked, setIsChecked] = useState(false);
-  const handleChange = () => {
-    setIsChecked(!isChecked);
-    oscurecer();
-  }
-  function oscurecer() {
-      let he=document.getElementsByTagName("header")[0];
-      let fo=document.getElementsByTagName("footer")[0];
-      he.classList.add("modooscuro");
-      fo.classList.add("modooscuro");
-      if(isChecked){
-        he.classList.remove("modooscuro");
-        fo.classList.remove("modooscuro");
-      }
-  }
+import React, { useState } from 'react';
 
+export const UserSettingsPage = () => {
+  // Estado para el tema oscuro o claro
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Función para cambiar el tema
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
   // HTML
   return (
     <>
@@ -31,9 +26,9 @@ export const UserSettingsPage = () => {
             <img src="/circle-user-regular.svg" alt="user" id="user" />
             <h4>Welcome, name</h4>
           </div>
-          <div class="container mt-3">
+          <div className="container mt-3">
             <form action="#">
-              <div class="row mb-3">
+              <div className="row mb-3">
                 <div className="col">
                   <label htmlFor="#">Nombre</label>
                   <br />
@@ -46,7 +41,7 @@ export const UserSettingsPage = () => {
                 </div>
               </div>
 
-              <div class="row mb-3">
+              <div className="row mb-3">
                 <div className="col">
                   <label htmlFor="#">Email</label>
                   <br />
@@ -65,13 +60,13 @@ export const UserSettingsPage = () => {
                   </button>
                 </div>
                 <div className="col">
-                  <div class="form-check form-switch d-flex flex-row justify-content-center mt-3">
+                  <div className="form-check form-switch d-flex flex-row justify-content-center mt-3">
                     <input
                       type="checkbox"
                       className="form-check-input"
                       id="theme"
-                      checked={isChecked}
-                      onChange={handleChange}
+                      checked={darkMode}
+                      onChange={toggleDarkMode}
                     />
                     <label className="form-check-label" for="theme">
                       Dark Theme
@@ -79,10 +74,10 @@ export const UserSettingsPage = () => {
                   </div>
                 </div>
               </div>
-              <div class="input-group d-flex flex-column justify-content-start mt-4">
+              <div className="input-group d-flex flex-column justify-content-start mt-4">
                 <label>About me</label>
                 <textarea
-                  class="form-control w-100"
+                  className="form-control w-100"
                   aria-label="With textarea"
                 ></textarea>
               </div>
