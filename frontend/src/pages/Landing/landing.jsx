@@ -2,7 +2,6 @@ import "./landing.sass";
 import { HeaderComponent } from "../../components/Header/header";
 import { FooterComponent } from "../../components/Footer/footer";
 import { Link } from 'react-router-dom';
-import { HeaderComponent } from "../../components/Header/header";
 
 
 export const LandginPage = () => {

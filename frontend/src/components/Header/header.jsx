@@ -22,7 +22,7 @@ export const HeaderComponent = ({ darkMode }) => {
 
     // HTML
     return (
-        <header className={`header ${darkMode ? 'darkmode' : 'lightmode'} `}>
+        <header>
             <img src='/logo.png' alt="" id='logo' />
             <img src='/logo_movil.png' alt="" id='logo2'/>
             <div className='d-flex justify-content-between d-none d-sm-flex' id='search-container'>

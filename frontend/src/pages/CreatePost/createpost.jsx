@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FooterComponent } from '../../components/Footer/footer';
 import { HeaderComponent } from '../../components/Header/header';
-import { Header2Component } from '../../components/Header2/header2';
 import './createpost.sass';
 
 export const CreatePostPage = () => {
