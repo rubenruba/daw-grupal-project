@@ -61,6 +61,7 @@ const renderApp = (isLogged, isAdmin) => {
             <Route path="post/:postId" element={ <PostPage/> } />
             <Route path="create-post" element={<CreatePostPage />} />
             <Route path="search-and-favorites" element={<Favorites />} />
+            <Route path="search-and-favorites/:title" element={<Favorites />} />
             <Route path="user-settings" element={<UserSettingsPage />} />
           </>
         )}

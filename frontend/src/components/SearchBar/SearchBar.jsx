@@ -6,7 +6,6 @@ export const SearchBarComponent = ({ footer }) => {
   // JS
   const urlSearch = "http://localhost/testFinalProjects/retrieveData/searchPost.php";
   const [title, setTitle] = useState('');
-  const navigate = useNavigate();
 
   const isFooter = () => {
     return footer === true
@@ -19,13 +18,7 @@ export const SearchBarComponent = ({ footer }) => {
   };
 
   const searchPosts = () => {
-    fetch(`${urlSearch}?title=${title}`, { method: 'GET' })
-    .then((response) => {
-        response.json();
-    })
-    .then(data => {
-        
-    })
+    window.location = `/search-and-favorites/${title}`;
   }
 
   // HTML
