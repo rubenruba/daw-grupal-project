@@ -1,11 +1,25 @@
 import './FavoriteArea.sass';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const FavoriteArea = ({post}) => {
     // JS
-    const addFav = 'http://localhost/testFinalProjects/insertData/addFavourite.php';
-    const removeFav = 'http://localhost/testFinalProjects/deleteFavourite.php';
+    // const addFav = 'http://localhost/testFinalProjects/insertData/addFavourite.php';
+    const addFav = 'http://localhost/testFinalProjects/new/actions/createData/createFavorite.php';
+    const removeFav = 'http://localhost/testFinalProjects/new/actions/deleteData/deleteFavorite.php';
     const [starPath, setStarPath] = useState('/svg/star-outlined.svg');
+
+    // Cookies del navegador
+    const cookies = document.cookie.split(";");
+    let userId;
+    cookies.forEach((cookie) => {
+      if (cookie.includes("userId")) userId = cookie.split("=")[1];
+    });
+    
+    useEffect(() => {
+        if(post.IsFavorite === 1){
+            setStarPath('/svg/star-solid.svg');
+        }
+    })
 
     const changePath = () => {
         if(starPath === '/svg/star-outlined.svg'){
@@ -18,11 +32,11 @@ export const FavoriteArea = ({post}) => {
     }
 
     const addFavourite = () => {
-        fetch(`${addFav}?postId=${post.PostId}`, { method: 'GET' });
+        fetch(`${addFav}?postId=${post.PostId}&userId=${userId}`, { method: 'GET' });
     }
 
     const deleteFavourite = () => {
-        fetch(`${removeFav}?postId=${post.PostId}`, { method: 'GET' });
+        fetch(`${removeFav}?postId=${post.PostId}&userId=${userId}`, { method: 'DELETE' });
     }
 
     const toPost = () => {

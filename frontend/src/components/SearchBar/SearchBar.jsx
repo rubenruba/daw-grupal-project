@@ -4,7 +4,6 @@ import "./SearchBar.sass";
 
 export const SearchBarComponent = ({ footer }) => {
   // JS
-  const urlSearch = "http://localhost/testFinalProjects/retrieveData/searchPost.php";
   const [title, setTitle] = useState('');
 
   const isFooter = () => {
@@ -18,7 +17,11 @@ export const SearchBarComponent = ({ footer }) => {
   };
 
   const searchPosts = () => {
-    window.location = `/search-and-favorites/${title}`;
+    if(title === ''){
+      window.location = `/posts/`;
+    } else {
+      window.location = `/posts/search/${title}`;
+    }
   }
 
   // HTML

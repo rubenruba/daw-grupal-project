@@ -7,8 +7,8 @@ export const ButtonsNavComponent = () => {
     return (
         <>
             <div className='buttons-nav d-flex justify-content-between'>
-                <a href='login'>Inicia Sesión</a>
-                <a href='register'>Regístrate</a>
+                <a href='/login'>Inicia Sesión</a>
+                <a href='/register'>Regístrate</a>
             </div>
         </>
     )

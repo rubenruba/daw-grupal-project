@@ -13,7 +13,7 @@ export const FooterComponent = () => {
                     <h2 className='ms-5 mt-4 fw-bold'>Navigation</h2>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="/search-and-favorites">All posts</a></li>
+                        <li><a href="/posts">All posts</a></li>
                         <li><a href="/create-post">Create a post</a></li>
                         <li><a href="/user-settings">User settings</a></li>
                         <li><a href="/contact-us">Contact Us</a></li>

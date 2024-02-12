@@ -5,26 +5,39 @@ import { FooterComponent } from "../../components/Footer/footer";
 import { HeaderComponent } from "../../components/Header/header";
 import "./search_favorites.sass";
 
-export const Favorites = () => {
+export const Favorites = (prop) => {
   // JS
   const urlAllPosts =
     "http://localhost/testFinalProjects/retrieveData/getAllPost.php";
   const urlSearch =
     "http://localhost/testFinalProjects/retrieveData/searchPost.php";
+  const urlFav =
+    "http://localhost/testFinalProjects/new/actions/readData/getAllFavPosts.php";
 
   const { title } = useParams("title");
   const [posts, setPosts] = useState([]);
 
+  // Cookies
+  const cookies = document.cookie.split(";");
+  let userId;
+
+  cookies.forEach((cookie) => {
+    if (cookie.includes("userId")) userId = cookie.split("=")[1];
+  });
+
   useEffect(() => {
-    if (!title) {
-      getAllPosts();
+    console.log(prop.fav);
+    if (prop?.fav) {
+      getAllFavPosts();
     } else if (title) {
       getSearched();
+    } else {
+      getAllPosts();
     }
   }, []);
 
   const getAllPosts = () => {
-    fetch(urlAllPosts, { method: "GET" })
+    fetch(`${urlAllPosts}?userId=${userId}`, { method: "GET" })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al obtener los posts");
@@ -47,6 +60,18 @@ export const Favorites = () => {
       .catch((error) => console.error("Error:", error));
   };
 
+  const getAllFavPosts = () => {
+    fetch(`${urlFav}?userId=${userId}`, { method: "GET" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al obtener los posts");
+        }
+        return response.json();
+      })
+      .then((data) => setPosts(data))
+      .catch((error) => console.error("Error:", error));
+  };
+
   // HTML
   return (
     <>
@@ -57,9 +82,7 @@ export const Favorites = () => {
           return <FavoriteArea key={post.PostId} post={post}></FavoriteArea>;
         })}
 
-        {posts.length <= 0 && (
-          <h2>No se ha encontrado ningún post</h2>
-        )}
+        {posts.length <= 0 && <h2>No se ha encontrado ningún post</h2>}
       </div>
 
       <FooterComponent></FooterComponent>

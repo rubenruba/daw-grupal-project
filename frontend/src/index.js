@@ -49,6 +49,9 @@ const renderApp = (isLogged, isAdmin) => {
         <Route path="/" element={<LandginPage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="contact-us" element={ <ContactUs/> } />
+        <Route path="post/:postId" element={ <PostPage/> } />
+        <Route path="posts" element={<Favorites />} />
+        <Route path="posts/search/:title" element={<Favorites />} />
         {!isLogged && (
           <>
             <Route path="login" element={<LoginPage />} />
@@ -58,10 +61,8 @@ const renderApp = (isLogged, isAdmin) => {
         )}
         {isLogged && (
           <>
-            <Route path="post/:postId" element={ <PostPage/> } />
             <Route path="create-post" element={<CreatePostPage />} />
-            <Route path="search-and-favorites" element={<Favorites />} />
-            <Route path="search-and-favorites/:title" element={<Favorites />} />
+            <Route path="posts/favorites" element={<Favorites fav={true} />} />
             <Route path="user-settings" element={<UserSettingsPage />} />
           </>
         )}
