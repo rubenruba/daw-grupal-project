@@ -3,43 +3,35 @@ import { SearchBarComponent } from '../SearchBar/SearchBar';
 
 export const FooterComponent = () => {
     // JS
-        function insta(){
-            window.location.href="https://instagram.com";
-        }
-        function twitter(){
-            window.location.href="https://twitter.com/";
-        }
-        function tiktok(){
-            window.location.href="https://tiktok.com/";
-        }
-
+    
     // HTML
     return (
         <footer>
             <SearchBarComponent footer={true}></SearchBarComponent>
-            <h2 className='ms-5 mt-4 fw-bold'>Legal advise</h2>
-            <div id="logos-links" className="d-flex flex-row ">
-                <ul>
-                    <li><a href="#">Legal</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="/contact-us">Contact Us</a></li>
-                    <li><a href="#">Cookie Settings</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
-                <div id='logos-rrss' className='d-flex flex-column me-5'>
-                    <div className='d-flex align-items-center'>
-                        <p className='mt-3 me-3 desaparecer'>Instagram</p>
-                        <img src="/img/instagram.png" alt="" onClick={insta} />
-                    </div>
-                    <div className='d-flex align-items-center'>
-                        <p className='mt-3 me-4 desaparecer'>Twitter</p>
-                        <img src="/img/twitter.png" alt="" onClick={twitter}/>
-                    </div>
-                    <div className='d-flex align-items-center'>
-                        <p className='mt-3 me-4 desaparecer'>TikTok</p>
-                        <img src="/img/TikTok.png" alt="" onClick={tiktok} />
-                    </div>
+            <div className="d-flex flex-row justify-content-around w-100">
+                <div>
+                    <h2 className='ms-5 mt-4 fw-bold'>Navigation</h2>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/search-and-favorites">All posts</a></li>
+                        <li><a href="/create-post">Create a post</a></li>
+                        <li><a href="/user-settings">User settings</a></li>
+                        <li><a href="/contact-us">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div id='logos-rrss' className='d-flex flex-column me-5 mt-4'>
+                    <a href='https://instagram.com' target={'_blank'} className='d-flex align-items-center'>
+                        <p className='mt-3 me-3 d-none d-sm-block'>Instagram</p>
+                        <img src="/img/instagram.png" alt="Instagram logo" />
+                    </a>
+                    <a href='https://twitter.com' target={'_blank'} className='d-flex align-items-center'>
+                        <p className='mt-3 me-4 d-none d-sm-block'>Twitter</p>
+                        <img src="/img/twitter.png" alt="Twitter logo"/>
+                    </a>
+                    <a href='https://tiktok.com' target={'_blank'}  className='d-flex align-items-center'>
+                        <p className='mt-3 me-4 d-none d-sm-block'>TikTok</p>
+                        <img src="/img/TikTok.png" alt="Tik tok logo" />
+                    </a>
                 </div>
             </div>
             <p className='text-center'>Copyright ©2024 Helpya, Inc. Site design / logo © 2024</p>
