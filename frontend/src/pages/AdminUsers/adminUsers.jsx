@@ -7,7 +7,7 @@ import './adminUsers.sass';
 
 export const AdminUsersPage = () => {
     // JS
-    const urlGetUser = 'http://localhost/testFinalProjects/retrieveData/getUsers.php';
+    const urlGetUser = 'http://localhost/testFinalProjects/new/actions/readData/getUsers.php';
     
     const [users, setUsers] = useState([]);
 
@@ -40,7 +40,6 @@ export const AdminUsersPage = () => {
             <article className='admin-users-container m-5'>
                 <div className='title d-flex justify-content-between'>
                     <h1>Usuarios registrados</h1>
-                    <SearchBarComponent></SearchBarComponent>
                 </div>
                 <section className='users-section'>
                     {users.map(user => {
