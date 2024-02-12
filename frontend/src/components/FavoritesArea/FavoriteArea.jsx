@@ -26,7 +26,7 @@ export const FavoriteArea = ({post}) => {
     }
 
     const toPost = () => {
-        window.location = 'post/' + post.PostId;
+        window.location = '/post/' + post.PostId;
     }
 
     // HTML
