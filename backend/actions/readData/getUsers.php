@@ -1,5 +1,5 @@
 <?php
-    include '../variables.php';
+    include '../../variables.php';
 
     try {
         // Conexion a la base de datos
@@ -51,6 +51,11 @@
                     'postId' => $row['CommentPostId']
                 );
             }
+        }
+
+        foreach ($users as &$user) {
+            $user['posts'] = array_values(array_unique($user['posts'], SORT_REGULAR)); // Array values to automatically index
+            $user['comments'] = array_values(array_unique($user['comments'], SORT_REGULAR));
         }
 
         $db = null;

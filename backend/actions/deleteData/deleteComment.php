@@ -1,25 +1,27 @@
 <?php
-    include './variables.php';
+    include '../../variables.php';
 
-    $userId = $_GET['userId'];
+    $commentId = $_GET['commentId'];
+
+    session_start();
+    $userId = $_SESSION['userId'];
 
     try {
-        // Conexion a la base de datos
         $db = new PDO("mysql:host=$serverName;dbname=$database", $user, $password);
 
-        // Busca el usuario que coincida con el email
-        $dbQuery = "DELETE FROM `User` WHERE `UserId` = '$userId'";
-        $a = $db->query($dbQuery);
+        $dbQuery = "DELETE FROM `Comment` WHERE `CommentId` = '$commentId'";
+
+        $db->query($dbQuery);
 
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS, DELETE");
         header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-
         $db = null;
         $dbQuery = null;
 
-    } catch (PDOException $e){  
-        echo $e;
+    } catch (PDOException $e) {
+        echo "ERROR: ".$e;
+        die();
     }
 ?>

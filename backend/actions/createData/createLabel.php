@@ -1,6 +1,6 @@
 <?php
     function insertLabel($userId){
-        include '../variables.php';
+        include '../../variables.php';
 
         $label1 = $_POST['label1'];
         $label2 = $_POST['label2'];

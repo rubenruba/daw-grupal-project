@@ -1,5 +1,5 @@
 <?php
-    include '../variables.php';
+    include '../../variables.php';
 
     $commentText = $_POST['comment'];
     $postId = $_POST['postId'];

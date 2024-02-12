@@ -1,6 +1,6 @@
 <?php
     function insertFiles($userId) {
-        include '../variables.php';
+        include '../../variables.php';
 
         try {
             $db = new PDO("mysql:host=$serverName;dbname=$database", $user, $password);

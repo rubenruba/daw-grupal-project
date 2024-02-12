@@ -3,6 +3,9 @@
 
     if(isset($_SESSION['userId'])){
         unset($_SESSION['userId']);
+
+        $_SESSION = array();
+
         session_destroy();
     }
 

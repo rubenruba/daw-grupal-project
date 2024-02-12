@@ -1,5 +1,5 @@
 <?php
-    include './variables.php';
+    include '../variables.php';
 
     $loginEmail = trim($_POST['email']);
     $loginPassword = trim($_POST['password']);
@@ -22,7 +22,6 @@
     function checkUserData($user, $loginEm, $loginPass){
         if($loginEm === $user['Email']){
             if(password_verify($loginPass, $user['Password'])){
-                echo "La contraseña coincide, iniciando sesión...";
                 startSession($user); // Guarda el id de usuario en la sesión
                 setcookie("userId", $user['UserId'], 0, '/'); // Alamcenamos en una cookie en el navegador el userId
                 header('Location: http://localhost:3000/'); // Cambia la url 
@@ -30,17 +29,13 @@
                 echo "Contraseña incorrecta";
             }
         } else {
-            echo "<br> $loginEm";
             echo "No existe un usuario con ese correo";
-            echo "<br> $user";
         }
     }
 
     // Guarda en la variable de sesión el id del usuario
     function startSession($user){
         session_start();
-        if(!isset($_SESSION['userId'])){
-            $_SESSION['userId'] = $user['UserId'];
-        }
+        $_SESSION['userId'] = $user['UserId'];
     }
 ?>

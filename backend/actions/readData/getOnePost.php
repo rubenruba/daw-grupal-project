@@ -1,5 +1,5 @@
 <?php
-    include '../variables.php';
+    include '../../variables.php';
 
     $postId = $_GET['postId'];
 
@@ -10,7 +10,7 @@
         $dbQuery = $db->query(
             "SELECT 
                 `Post`.`PostId`, `Post`.`UserId` AS `PostUserId` , `Post`.`Title` AS `PostTitle`, `Post`.`Text` AS `PostText`, `Post`.`Date` AS `PostDate` ,
-                `File`.`FileId`, `File`.`Type` AS `FileType`, `File`.`Name` AS `FileName`, 
+                `File`.`FileId`, `File`.`Type` AS `FileType`, `File`.`Name` AS `FileName`, `File`.`FileBLOB`,
                 `Comment`.`CommentId`, `Comment`.`UserId` AS `CommentUserId` , `Comment`.`Text` AS `CommentText`, `Comment`.`Date` AS `CommentDate`,
                 `Label`.*
             FROM `Post`
@@ -41,7 +41,8 @@
                 $post['post']['Files'][] = array(
                     'FileId' => $row['FileId'],
                     'FileType' => $row['FileType'],
-                    'FileName' => $row['FileName']
+                    'FileName' => $row['FileName'],
+                    'FileBLOB' => base64_encode($row['FileBLOB'])
                 );
             }
 
@@ -63,10 +64,29 @@
         }
 
         foreach ($post as &$item) {
-            $item['Files'] = array_unique($item['Files'], SORT_REGULAR);
-            $item['Comments'] = array_unique($item['Comments'], SORT_REGULAR);
-            $item['Labels'] = array_unique($item['Labels'], SORT_REGULAR);
+            $item['Files'] = array_values(array_unique($item['Files'], SORT_REGULAR)); // Array values to automatically index
+            $item['Comments'] = array_values(array_unique($item['Comments'], SORT_REGULAR));
+            $item['Labels'] = array_values(array_unique($item['Labels'], SORT_REGULAR));
         }
+
+        // Bucle para agregar el username del usuario que realizó cada comentario
+        foreach ($post['post']['Comments'] as &$comment) {
+            $commentUserId = $comment['CommentUserId'];
+            $commentUserQuery = $db->query("SELECT `username` FROM `User` WHERE `UserId` = '$commentUserId'");
+            $commentUserRow = $commentUserQuery->fetch(PDO::FETCH_ASSOC);
+            $commentUsername = $commentUserRow['username'];
+            $comment['CommentUsername'] = $commentUsername;
+        }
+
+        // Consulta para obtener el username del usuario que creó el post
+        $postUserId = $post['post']['PostUserId'];
+        $postUserQuery = $db->query("SELECT `username` FROM `User` WHERE `UserId` = '$postUserId'");
+        $postUserRow = $postUserQuery->fetch(PDO::FETCH_ASSOC);
+        $postUsername = $postUserRow['username'];
+
+        // Agregar el username del usuario que creó el post al array del post
+        $post['post']['PostUsername'] = $postUsername;
+
 
         $post = json_encode($post);
         

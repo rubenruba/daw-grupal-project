@@ -1,7 +1,7 @@
 <?php
-    include '../variables.php';
-    include './insertFiles.php';
-    include './addLabel.php';
+    include '../../variables.php';
+    include './createFiles.php';
+    include './createLabel.php';
 
     $text = $_POST['postText'];
     $title = $_POST['title'];

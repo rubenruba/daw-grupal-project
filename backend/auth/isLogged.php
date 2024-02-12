@@ -1,5 +1,5 @@
 <?php
-    include './variables.php';
+    include '../variables.php';
 
     $userId = $_GET['userId'];
 
