@@ -45,21 +45,21 @@ export const FavoriteArea = ({post}) => {
 
     // HTML
     return (
-        <div className="container-f" onClick={() => toPost()}>
+        <div className="container-f">
             <div className="simbolos">
                 <img src="/preguntas-mas-frecuentes.png" alt="" />
                 <button className='star' onClick={changePath}>
                     <img src={starPath} alt="Star"/>
                 </button>
             </div>
-            <div className="favorite-text">
+            <div className="favorite-text" onClick={() => toPost()}>
                 <h2>{post.Title.toUpperCase()}</h2>
                 <p>{post.Text}</p>
             </div>
-            <div className="container-tag">
-                <button>Etiqueta1</button>
-                <button>Etiqueta1</button>
-                <button>Etiqueta1</button>
+            <div className="container-tag d-flex">
+                {post.Labels.map(label => {
+                    if(label !== '') return <button>{label.Name}</button>
+                })}
             </div>
         </div>
     );

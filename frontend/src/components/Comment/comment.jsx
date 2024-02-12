@@ -20,7 +20,7 @@ export const CommentComponent = ({comment}) => {
   const deleteComment = () => {
     if(window.confirm('¿Quieres borrar la respuesta?')){
       fetch(`${urlDelete}?commentId=${comment.CommentId}`, { method: 'DELETE' });
-      document.getElementById(atob(comment.CommentId)).remove();
+      document.getElementById(comment.CommentId).remove();
     }
   }
 
@@ -31,7 +31,7 @@ export const CommentComponent = ({comment}) => {
 
   // HTML
   return (
-    <div className="comentario mb-3" id={atob(comment.CommentId)}>
+    <div className="comentario mb-3" id={comment.CommentId}>
       <p className="mb-2">{comment.CommentText}</p>
       <p className="text-end mb-2">
         {checkComment()} {returnDate(comment.CommentDate)} | <a href="">{comment.CommentUsername}</a>

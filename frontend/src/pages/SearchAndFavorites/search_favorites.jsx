@@ -8,9 +8,9 @@ import "./search_favorites.sass";
 export const Favorites = (prop) => {
   // JS
   const urlAllPosts =
-    "http://localhost/testFinalProjects/retrieveData/getAllPost.php";
+    "http://localhost/testFinalProjects/new/actions/readData/getAllPost.php";
   const urlSearch =
-    "http://localhost/testFinalProjects/retrieveData/searchPost.php";
+    "http://localhost/testFinalProjects/new/actions/readData/searchPost.php";
   const urlFav =
     "http://localhost/testFinalProjects/new/actions/readData/getAllFavPosts.php";
 
@@ -49,7 +49,7 @@ export const Favorites = (prop) => {
   };
 
   const getSearched = () => {
-    fetch(`${urlSearch}?title=${title}`, { method: "GET" })
+    fetch(`${urlSearch}?title=${title}&userId=${userId}`, { method: "GET" })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al obtener los posts");
