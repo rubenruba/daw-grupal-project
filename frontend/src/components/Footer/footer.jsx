@@ -16,9 +16,7 @@ export const FooterComponent = () => {
     // HTML
     return (
         <footer>
-            <div id='searchbar-movil' className="d-sm-none d-flex flex-row justify-content-center">
-                <SearchBarComponent></SearchBarComponent>
-            </div>
+            <SearchBarComponent footer={true}></SearchBarComponent>
             <h2 className='ms-5 mt-4 fw-bold'>Legal advise</h2>
             <div id="logos-links" className="d-flex flex-row ">
                 <ul>

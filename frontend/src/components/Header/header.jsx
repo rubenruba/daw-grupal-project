@@ -1,8 +1,9 @@
 import { ButtonsNavComponent } from '../ButtonsNav/buttonsNav';
 import { MenuComponent } from '../Menu/menu';
+import { SearchBarComponent } from '../SearchBar/SearchBar';
 import './header.sass';
 
-export const HeaderComponent = ({ darkMode }) => {
+export const HeaderComponent = () => {
     // JS
     const cookies = document.cookie.split(";");
 
@@ -23,12 +24,9 @@ export const HeaderComponent = ({ darkMode }) => {
     // HTML
     return (
         <header>
-            <img src='/logo.png' alt="" id='logo' />
-            <img src='/logo_movil.png' alt="" id='logo2'/>
-            <div className='d-flex justify-content-between d-none d-sm-flex' id='search-container'>
-                <input type="text" placeholder=' Search... ' className='form-control me-4' id='cabe' />
-                <img src="/lupa.png" alt="search icon" />
-            </div>
+            <img src='/logo.png' alt="" id='logo' className='d-none d-sm-block' />
+            <img src='/logo_movil.png' alt="" id='mobile-logo' className='d-block d-sm-none'/>
+            <SearchBarComponent footer={false}></SearchBarComponent>
             {showMenu()}
         </header>
     )

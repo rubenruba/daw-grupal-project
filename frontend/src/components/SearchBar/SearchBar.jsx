@@ -1,21 +1,43 @@
-import './SearchBar.sass';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import "./SearchBar.sass";
 
+export const SearchBarComponent = ({ footer }) => {
+  // JS
+  const urlSearch = "http://localhost/testFinalProjects/retrieveData/searchPost.php";
+  const [title, setTitle] = useState('');
+  const navigate = useNavigate();
 
-export const SearchBarComponent = () => {
-    // JS
+  const isFooter = () => {
+    return footer === true
+      ? "footer-search d-flex align-items-center d-sm-none"
+      : "header-search d-none d-sm-flex align-items-center";
+  };
 
+  const isFooterImage = () => {
+    return footer === true ? "/img/Search.png" : "/lupa.png";
+  };
 
-    // HTML
-    //TO DO: ONCLICK DE LA IMAGEN Y FUNCIÓN PARA LA BÚSQUEDA
-    return (
-        /*<div id="searchBar" className='d-flex flex-row'>
-            <input type="text" name="search" id="SearchBar" className='form-control' placeholder='Search...'/>
-            <img src="/img/Search.png" alt="search button" onClick=""/>
-        </div>*/
-        <div id="searchBar" className="d-flex flex-row align-items-center">
-            <input type="text" name="search" id="SearchBar" /*className="form-control"*/ placeholder="Search..."/>
-            <img src="/img/Search.png" alt="search button" onclick=""/>
-        </div>
+  const searchPosts = () => {
+    fetch(`${urlSearch}?title=${title}`, { method: 'GET' })
+    .then((response) => {
+        response.json();
+    })
+    .then(data => {
+        
+    })
+  }
 
-    )
-}
+  // HTML
+  return (
+    <div className={isFooter()}>
+        <input 
+        type="text" 
+        className="form-control" 
+        placeholder=" Search... " 
+        onChange={(e) => setTitle(e.target.value)}
+        />
+        <img src={isFooterImage()} onClick={searchPosts} alt="search icon" />
+    </div>
+  );
+};

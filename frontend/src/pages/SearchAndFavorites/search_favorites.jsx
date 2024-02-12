@@ -34,7 +34,6 @@ export const Favorites = () => {
     fetchPosts();
   }, []);
 
-
   // HTML
   return (
     <>

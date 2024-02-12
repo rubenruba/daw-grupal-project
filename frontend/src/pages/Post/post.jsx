@@ -74,7 +74,8 @@ export const PostPage = () => {
                 <h5 className="card-title">Archivos adjuntos</h5>
                 <ul className="list-group files-list">
                   {files.map(file => {
-                    return <li><a href={''} download>{file.FileName}</a></li>
+                    const fileBLOB = new Blob([atob(file.FileBLOB)], {type: file.FileType})
+                    return <li><a href={URL.createObjectURL(fileBLOB)} download>{file.FileName}</a></li>
                   })}
                 </ul>
               </div>
@@ -94,7 +95,7 @@ export const PostPage = () => {
                 <h5 className="card-title">Archivos adjuntos</h5>
                 <ul className="list-group files-list">
                   {files.map(file => {
-                    return <li><a href={''} download>{file.FileName}</a></li>
+                    return <li><a href={file.FileBLOB} download>{file.FileName}</a></li>
                   })}
                 </ul>
               </div>
