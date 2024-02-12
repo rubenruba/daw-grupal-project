@@ -2,17 +2,12 @@ import { useState } from 'react';
 import { FooterComponent } from '../../components/Footer/footer';
 import { HeaderComponent } from '../../components/Header/header';
 import './createpost.sass';
-
 export const CreatePostPage = () => {
-    const [apiResponse, setApiResponse] = useState(null);
-
     const corta = (e) => {
         e.preventDefault();
-
     }
-    // Función para manejar el clic en el botón Publicar
-    const handlePublish = async () => {
-        // Obtener el texto del textarea
+    //CUANDO LE DES AL BOTON DE PUBLICAR 
+    const Publica = async () => {
         const text = document.getElementById("apitext").value;
         const url = 'https://community-purgomalum.p.rapidapi.com/json?text=' + encodeURIComponent(text);
         const options = {
@@ -24,42 +19,42 @@ export const CreatePostPage = () => {
         };
         try {
             let palabrasInapropiadas = [
-                "cabrón", "joder", "puta", "pendejo", "coño", "mierda", "maricón", "zorra", "idiota", "malparido",
+                "cabron","cabrón", "joder", "puta", "pendejo", "coño", "mierda", "maricón", "zorra", "idiota", "malparido",
                 "perra", "bastardo", "hijoputa", "mamón", "gilipollas", "chinga", "coger", "desgraciado", "pelotudo",
                 "cabronazo", "culero", "chupapijas", "cachonda", "chupar", "pito", "verga", "puñeta", "chingar", "pajero",
-                "mierdita", "pendeja", "cabrón", "putazo", "mamahuevo", "mamaverga", "huevón", "pendejada", "pirobo",
-                "gilipuertas", "cagón", "estúpido", "imbécil", "cabestro", "cabrón", "pinche", "culebra", "tonto",
+                "mierdita", "pendeja", "putazo", "mamahuevo", "mamaverga", "huevón", "pendejada", "pirobo",
+                "gilipuertas", "cagón", "estúpido", "imbécil", "cabestro", "pinche", "culebra", "tonto",
                 "tarado", "baboso", "putañero", "carajo", "pichula", "pajúa", "cachar", "culear", "reconchetumare",
                 "culeado", "putamadre", "papaya", "putero", "jodido", "pichabrava", "mierdecilla", "pelmazo",
-                "malnacido", "cachucha", "mariposón", "mariposón", "puñal", "carajo", "chingón", "reputo",
-                "joputa", "putero", "pichicorta", "reputo", "puticlub", "capullo", "trolo", "putarra", "malparido",
-                "fornicar", "chichi", "pipí", "pimpirrín", "chuminada", "mierdecilla", "culero", "mecos", "huevón",
-                "pajillero", "joputa", "mariposón", "marica", "pajillero", "meón", "mojigato", "papafrita", "papelón",
-                "pajarraco", "mojón", "malparido", "merdellón", "mariconazo", "maricón", "manco", "jilipollas",
-                "pendejón", "papanatas", "pajote", "nabazo", "mariposilla", "naco", "mierdón", "jilipollas",
-                "pendejazo", "pajuelo", "mona", "papapollas", "papanatas", "mojón", "pinchurriento", "pantallero",
-                "papanatas", "jilipollas", "papafrita", "mierdón", "mariquita", "panoli", "mamón", "mamón", "putañero",
-                "putero", "pene", "mierda", "puticlub", "pito", "pelotas", "pene", "perro", "pelado", "papanatas",
-                "panocha", "mariconazo", "marica", "mamar", "jilipollas", "jilipollas", "pendejazo", "pendejo",
-                "pendejada", "pelotazo", "pajón", "pajoso", "pajillero", "pajero", "pajarraco", "pajillero", "paquete",
-                "pajarraco", "parásito", "patán", "patético", "payaso", "pechofrío", "pedo", "pendejo", "pene", "picarón",
-                "pijo", "pinche", "pipí", "pirobo", "pito", "putero", "puta", "putear", "putero", "pichicorta",
-                "putamierda", "putear", "putañero", "puta", "putañero", "putarra", "putarraca", "puticlub", "putidifuso",
-                "putiengue", "putiinferno", "puto", "putón", "putrefacto", "putrefacto", "putrefacto", "puturrú",
-                "puturrú", "puturrú", "puñal", "puñalada", "puñalazo", "puñalón", "puñetazo", "puñetero", "puñetero",
-                "puñetero", "puño", "putazo", "putazo", "putazo", "putear", "putear", "putear", "putero", "puti",
-                "puto", "putón", "putón", "putón", "putón", "putrefacto", "putrefacto", "putrefacto", "puturrú"];
+                "malnacido", "cachucha", "mariposón", "puñal", "chingón", "reputo", "joputa", "pichicorta",
+                "puticlub", "capullo", "trolo", "putarra", "fornicar", "chichi", "pipí", "pimpirrín", "chuminada", 
+                "mecos", "pajillero", "marica", "meón", "mojigato", "papafrita", "papelón", "pajarraco", "mojón",
+                "merdellón", "manco", "jilipollas", "pendejón", "papanatas", "pajote", "nabazo", "mariposilla", 
+                "naco", "mierdón", "pendejazo", "pajuelo", "mona", "papapollas", "pinchurriento", "pantallero", 
+                "mariquita", "panoli", "pene", "pelotas", "pelado", "panocha", "mamar", "pelotazo", "pajón", 
+                "pajoso", "paquete", "parásito", "patán", "patético", "payaso", "pechofrío", "pedo", "picarón",
+                "pijo", "putear", "pichicorta", "putamierda", "putarraca", "putiengue", "putiinferno", "putón", 
+                "putrefacto", "puturrú", "puñalada", "puñalazo", "puñalón", "puñetazo", "puñetero", "putazo", "putear", 
+                "putero", "puti", "puto", "tupu"
+            ];            
             const api = document.getElementById("apitext").value;
             const response = await fetch(url, options);
+            //COGER RESPUESTA EN FORMATO JSON
             const result = await response.json();
             console.log(result.result);
             console.log(api)
-            if (result.result != api || palabrasInapropiadas.includes(api)) {
+            let arr=api.split(" ");
+            //FOREACH PARA RECORRER TODA LA CADENA DE TEXTO PARA COMPROBAR PALABRAS MALSONANTES
+            arr.forEach(element => {
+                if(palabrasInapropiadas.includes(element.toLowerCase())){
+                    console.log("cortando2")
+                }
+            });
+            //CONDICION POR API PARA COMPROBAR EL RESTOD DE PALABRAS QUE NO ESTA EN EL ARRAY
+            if (result.result !== api) {
                 let form = document.getElementById("formularioapi");
                 console.log("cortando 2")
-                form.addEventListener("submit", function (e) {
-                    corta(e);
-                })
+                //FALTA AQUI CANCELAR ENVIO DE FORMULARIO
             }
         } catch (error) {
             console.error(error);
@@ -89,17 +84,9 @@ export const CreatePostPage = () => {
                                 Etiquetas
                                 <img src="/mas.png" alt="" id='mas' className='ms-4' />
                             </button>
-                            {/* Agregar el controlador de eventos onClick al botón Publicar */}
-                            <button id='btn2' className='p-2 mt-5' onClick={handlePublish}>Publicar</button>
+                            <button id='btn2' className='p-2 mt-5' onClick={Publica}>Publicar</button>
                         </div>
                     </div>
-                    {/* Mostrar la respuesta de la API si existe */}
-                    {apiResponse && (
-                        <div>
-                            <h4>Respuesta de la API:</h4>
-                            <pre>{apiResponse}</pre>
-                        </div>
-                    )}
                 </form>
             </section>
             <FooterComponent></FooterComponent>
