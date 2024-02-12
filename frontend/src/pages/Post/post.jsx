@@ -41,7 +41,6 @@ export const PostPage = () => {
       setLabels(data.post.Labels);
       setFiles(data.post.Files);
       setComments(data.post.Comments);
-      console.log(post)
     })
     .catch((error) => {
       console.log("ERROR", error);
@@ -75,7 +74,7 @@ export const PostPage = () => {
                 <ul className="list-group files-list">
                   {files.map(file => {
                     const fileBLOB = new Blob([atob(file.FileBLOB)], {type: file.FileType})
-                    return <li><a href={URL.createObjectURL(fileBLOB)} download>{file.FileName}</a></li>
+                    return <li><a href={URL.createObjectURL(fileBLOB)} download={file.FileName}>{file.FileName}</a></li>
                   })}
                 </ul>
               </div>

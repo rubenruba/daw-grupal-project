@@ -58,6 +58,28 @@ export const CreatePostPage = () => {
     //     console.log(selected)
     // }
 
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        const maxFileSize = 16 * 1024 * 1024; // 16 MB
+        const maxFiles = 4;
+
+        // Verifica la cantidad de archivos seleccionados
+        if (files.length > maxFiles) {
+            alert(`Solo puedes seleccionar un máximo de ${maxFiles} archivos.`);
+            event.target.value = ''; // Borra la selección de archivos
+            return;
+        }
+
+        // Verifica el tamaño de cada archivo seleccionado
+        for (let i = 0; i < files.length; i++) {
+            if (files[i].size > maxFileSize) {
+                alert(`El archivo ${files[i].name} supera el tamaño máximo permitido de 16 MB.`);
+                event.target.value = ''; // Borra la selección de archivos
+                return;
+            }
+        }
+    };
+
     // HTML
     return (
         <>
@@ -67,9 +89,9 @@ export const CreatePostPage = () => {
                     <h3 className='text-center fw-bold'>MAKE A POST</h3>
                     <div id='contenido'>
                         <p>Título</p>
-                        <input type="text" className='form-control' name='title'/>
+                        <input type="text" className='form-control' name='title' required/>
                         <p className='mt-4'>Texto</p>
-                        <textarea type="text" className='form-control' rows="15" name='postText'/>
+                        <textarea type="text" className='form-control' rows="15" name='postText' required/>
                     </div>
                     <div className='labels-container'>
                         <p className='mb-3'>Etiquetas</p>
@@ -99,7 +121,7 @@ export const CreatePostPage = () => {
                         <div className='mb-4'>
                             <p className='mt-5'>Adjuntar archivos</p>
                             {/* TO DO - Add an input to insert files */}
-                            <input type="file" id="fileInput" name='files[]' multiple/>
+                            <input type="file" id="fileInput" name='files[]' onChange={handleFileChange} multiple />
                             <img src="/adjuntar.png" id='adjunta' alt="" />
                         </div>
                         <button className='p-2 mt-5'>Publicar</button>
