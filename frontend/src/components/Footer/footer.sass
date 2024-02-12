@@ -1,7 +1,6 @@
 @import "../../styles/variables.sass"
 
 footer
-    padding: 10px
     width: 100%
     background-color: $blueLigth
     color: $whiteLigth
@@ -10,35 +9,18 @@ footer
         width: 100%
         li
             margin-left: 25px
-            padding: 6px
             font-family: $pop
             padding-bottom: 6px
     #logos-rrss
         align-items: flex-end
         width: 50%
         img
-            margin: 10px
+            margin-left: 10px
             cursor: pointer
+            width: 40px
+            height: 40px
     a
         color: $whiteLigth
         text-decoration: none
         &:hover
-            color: $purpleLigth
-
-@media screen and (max-width: 576px)
-    #logos-rrss
-        margin-left: 20px
-    
-    div#logos-rrss img
-        width: 50px
-        height: 50px
-
-@media screen and (min-width: 576px) and (max-width: 992px) 
-    div#logos-rrss img
-        width: 40px
-        height: 40px
-
-@media screen and (min-width: 992px)
-    div#logos-rrss img
-        width: 50px
-        height: 50px
+            color: $greenLigth

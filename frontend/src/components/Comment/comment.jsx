@@ -13,22 +13,28 @@ export const CommentComponent = ({comment}) => {
 
   const checkComment = () => {
     if(comment.CommentUserId === Number(userId)){
-      return <button onClick={deleteComment}>Delete</button>
+      return <button className="delete-button" onClick={deleteComment}>Delete | </button>
     }
   }
 
   const deleteComment = () => {
-    fetch(`${urlDelete}?commentId=${comment.CommentId}`, { method: 'DELETE' });
+    if(window.confirm('¿Quieres borrar la respuesta?')){
+      fetch(`${urlDelete}?commentId=${comment.CommentId}`, { method: 'DELETE' });
+      document.getElementById(atob(comment.CommentId)).remove();
+    }
+  }
+
+  const returnDate = (date) => {
+    const dat = new Date(date);
+    return `${dat.getDate()} - ${dat.getMonth() + 1} - ${dat.getFullYear()}`;
   }
 
   // HTML
   return (
-    <div className="comentario">
-      <div className="d-flex flex-direction-row">
-        <p className="mb-5">{comment.CommentText}</p>
-      </div>
-      <p>
-        <a href="">{comment.CommentUsername}</a> {checkComment()}
+    <div className="comentario mb-3" id={atob(comment.CommentId)}>
+      <p className="mb-2">{comment.CommentText}</p>
+      <p className="text-end mb-2">
+        {checkComment()} {returnDate(comment.CommentDate)} | <a href="">{comment.CommentUsername}</a>
       </p>
     </div>
   );
