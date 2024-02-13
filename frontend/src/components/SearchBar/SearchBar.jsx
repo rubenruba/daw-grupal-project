@@ -1,21 +1,40 @@
-import './SearchBar.sass';
+import { useState } from 'react';
+import "./SearchBar.sass";
+import lens from '../../assets/img/lens.png';
+import whiteLens from '../../assets/img/white-lens.png';
 
+export const SearchBarComponent = ({ footer }) => {
+  // JS
+  const [title, setTitle] = useState('');
 
-export const SearchBarComponent = () => {
-    // JS
+  const isFooter = () => {
+    return footer === true
+      ? "footer-search d-flex align-items-center d-sm-none"
+      : "header-search d-none d-sm-flex align-items-center";
+  };
 
+  const isFooterImage = () => {
+    return footer === true ?whiteLens :lens;
+  };
 
-    // HTML
-    //TO DO: ONCLICK DE LA IMAGEN Y FUNCIÓN PARA LA BÚSQUEDA
-    return (
-        /*<div id="searchBar" className='d-flex flex-row'>
-            <input type="text" name="search" id="SearchBar" className='form-control' placeholder='Search...'/>
-            <img src="/img/Search.png" alt="search button" onClick=""/>
-        </div>*/
-        <div id="searchBar" className="d-flex flex-row align-items-center">
-            <input type="text" name="search" id="SearchBar" /*className="form-control"*/ placeholder="Search..."/>
-            <img src="/img/Search.png" alt="search button" onclick=""/>
-        </div>
+  const searchPosts = () => {
+    if(title === ''){
+      window.location = `/posts/`;
+    } else {
+      window.location = `/posts/search/${title}`;
+    }
+  }
 
-    )
-}
+  // HTML
+  return (
+    <div className={isFooter()}>
+        <input 
+        type="text" 
+        className="form-control" 
+        placeholder=" Search... " 
+        onChange={(e) => setTitle(e.target.value)}
+        />
+        <img src={isFooterImage()} onClick={searchPosts} alt="search icon" />
+    </div>
+  );
+};

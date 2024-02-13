@@ -5,8 +5,8 @@ import './adminUsers.sass';
 
 export const AdminUsersPage = () => {
 
-    const urlGetUser = 'http://localhost/testFinalProjects/retrieveData/getUsers.php';
-    const urlDeleteUser = 'http://localhost/testFinalProjects/deleteUser.php';
+    const urlGetUser = 'http://localhost/testFinalProjects/new/actions/readData/getAllUsers.php';
+    const urlDeleteUser = 'http://localhost/testFinalProjects/new/actions/deleteData/deleteUser.php';
 
     let users = [];
 

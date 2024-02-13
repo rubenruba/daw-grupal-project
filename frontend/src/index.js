@@ -14,8 +14,8 @@ import { NotFoundPage } from './pages/NotFound/NotFound';
 import { ResetPasswordPage } from './pages/ResetPassword/resetpassword';
 import { ContactUs } from './pages/ContacUs/contactus';
 
-const urlLogged = "http://localhost/testFinalProjects/isLogged.php";
-const urlAdmin = "http://localhost/testFinalProjects/isAdmin.php";
+const urlLogged = "http://localhost/testFinalProjects/new/auth/isLogged.php";
+const urlAdmin = "http://localhost/testFinalProjects/new/auth/isAdmin.php";
 const cookies = document.cookie.split(";");
 
 let userId;
@@ -49,6 +49,10 @@ const renderApp = (isLogged, isAdmin) => {
         <Route path="/" element={<LandginPage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="contact-us" element={ <ContactUs/> } />
+        <Route path="post/:postId" element={ <PostPage/> } />
+        <Route path="posts" element={<Favorites />} />
+        <Route path="posts/search/:title" element={<Favorites />} />
+        <Route path="user/:username" element={<UserSettingsPage />} />
         {!isLogged && (
           <>
             <Route path="login" element={<LoginPage />} />
@@ -58,10 +62,8 @@ const renderApp = (isLogged, isAdmin) => {
         )}
         {isLogged && (
           <>
-            <Route path="post/:postId" element={ <PostPage/> } />
             <Route path="create-post" element={<CreatePostPage />} />
-            <Route path="search-and-favorites" element={<Favorites />} />
-            <Route path="user-settings" element={<UserSettingsPage />} />
+            <Route path="posts/favorites" element={<Favorites fav={true} />} />
           </>
         )}
         {isAdmin && <Route path="admin-users" element={<AdminUsersPage />} />}
