@@ -23,6 +23,13 @@
         // Cambia la url a landing
         header('Location: http://localhost:3000/');
 
+        $destinatario = $gmailNav;
+        $asunto = "Bienvenida a HelpYa";
+        $mensaje = "Hola ".$nameNav.", bienvenido a HelpYa. Gracias por registrarte";
+        $cabeceras = 'From: kevin612003@gmail.com' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+        mail($destinatario, $asunto, $mensaje, $cabeceras);
+       
         // Cierra la conexión y la query
         $db = null;
         $dbQuery = null;
