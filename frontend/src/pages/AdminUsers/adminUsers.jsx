@@ -1,14 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { FooterComponent } from '../../components/Footer/footer';
+import { HeaderComponent } from '../../components/Header/header';
 import { SearchBarComponent } from '../../components/SearchBar/SearchBar';
+import { UserAdminComponent } from '../../components/UserAdmin/userAdmin';
 import './adminUsers.sass';
 
 export const AdminUsersPage = () => {
-
+    // JS
     const urlGetUser = 'http://localhost/testFinalProjects/new/actions/readData/getAllUsers.php';
     const urlDeleteUser = 'http://localhost/testFinalProjects/new/actions/deleteData/deleteUser.php';
-
-    let users = [];
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
         const fetchUsers = () => {
@@ -24,75 +25,26 @@ export const AdminUsersPage = () => {
                 }
                 return response.json();
             })
-            .then(data => {
-                users = data;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            .then(data => setUsers(data))
+            .catch(error =>  console.error('Error:', error));
         };
         
         fetchUsers();
-        viewUsers();
 
-    });
-
-    const deleteUser = (userId) => {
-        fetch(`${urlDeleteUser}?userId=${userId}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            mode: 'no-cors'
-        }).then(() => {
-            const removeUser = document.getElementById(userId);
-            removeUser.remove(); 
-        })
-    }
-
-    const viewUsers = () => {
-        setTimeout(() => {
-            const container = document.getElementsByClassName('users-section')[0];
-
-            users.forEach(user => {
-                // Div element
-                const div = document.createElement('div');
-                div.className = 'user-info';
-                div.id = user.UserId;
-
-                // Image element
-                const image = document.createElement('img');
-                image.src = 'delete.svg';
-                image.alt = 'delete icon';
-                image.addEventListener('click', () => {
-                    deleteUser(user.UserId);
-                });
-                
-                // P element
-                const userInfo = document.createElement('p');
-                userInfo.textContent = `${user.Email} - ${user.Username}`;
-
-                // Append to div element
-                div.appendChild(userInfo)
-                div.appendChild(image)
-                
-                container.appendChild(div);
-            })
-        }, 100)
-    };
-
+    }, []);
     
+    // HTML
     return (
         <>
-            {/* TO DO - Insert header component when finish */}
-            <header>Header component</header>
+            <HeaderComponent></HeaderComponent>
             <article className='admin-users-container m-5'>
                 <div className='title d-flex justify-content-between'>
                     <h1>Usuarios registrados</h1>
-                    <SearchBarComponent></SearchBarComponent>
                 </div>
                 <section className='users-section'>
-                    
+                    {users.map(user => {
+                        return <UserAdminComponent key={user} user={user}></UserAdminComponent>
+                    })}
                 </section>
             </article>
             <FooterComponent></FooterComponent>
