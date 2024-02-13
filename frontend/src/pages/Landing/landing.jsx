@@ -2,7 +2,7 @@ import { HeaderComponent } from "../../components/Header/header";
 import { FooterComponent } from "../../components/Footer/footer";
 import { Link } from 'react-router-dom';
 import chatImage from '../../assets/svg/chat.svg';
-import starSolidImage from '../../assets/svg/star-solid.svg';
+import starSolidImage from '../../assets/svg/green-star.svg';
 import "./landing.sass";
 
 

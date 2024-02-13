@@ -17,7 +17,6 @@ export const MenuComponent = () => {
             <img src={user} alt="user" id='user'/>
             <ul className='menu'>
                 <li><a href="/create-post">New post</a></li>
-                <li><a href="/user-settings">Settings</a></li>
                 <li><a href="/posts/favorites">Favorites</a></li>
                 <li onClick={logout}>Logout</li>
             </ul>
