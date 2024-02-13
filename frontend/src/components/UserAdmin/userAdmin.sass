@@ -1,0 +1,21 @@
+@import '../../styles/variables.sass'
+
+.user-info-container
+    border: 2px solid $grey
+    padding: 10px
+    .user-info
+        display: flex
+        justify-content: space-between
+        img
+            width: 20px
+            cursor: pointer
+        .option-icons
+            gap: 15px
+    &:first-of-type
+        border-radius: 10px 10px 0 0
+    &:last-of-type
+        border-radius: 0 0 10px 10px
+    &:hover
+        background-color: $grey
+    p
+        margin: 0
