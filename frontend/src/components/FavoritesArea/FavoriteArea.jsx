@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 
 export const FavoriteArea = ({post}) => {
     // JS
-    // const addFav = 'http://localhost/testFinalProjects/insertData/addFavourite.php';
     const addFav = 'http://localhost/testFinalProjects/new/actions/createData/createFavorite.php';
     const removeFav = 'http://localhost/testFinalProjects/new/actions/deleteData/deleteFavorite.php';
     const [starPath, setStarPath] = useState('/svg/star-outlined.svg');

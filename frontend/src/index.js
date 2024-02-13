@@ -14,8 +14,8 @@ import { NotFoundPage } from './pages/NotFound/NotFound';
 import { ResetPasswordPage } from './pages/ResetPassword/resetpassword';
 import { ContactUs } from './pages/ContacUs/contactus';
 
-const urlLogged = "http://localhost/testFinalProjects/isLogged.php";
-const urlAdmin = "http://localhost/testFinalProjects/isAdmin.php";
+const urlLogged = "http://localhost/testFinalProjects/new/auth/isLogged.php";
+const urlAdmin = "http://localhost/testFinalProjects/new/auth/isAdmin.php";
 const cookies = document.cookie.split(";");
 
 let userId;
@@ -52,6 +52,7 @@ const renderApp = (isLogged, isAdmin) => {
         <Route path="post/:postId" element={ <PostPage/> } />
         <Route path="posts" element={<Favorites />} />
         <Route path="posts/search/:title" element={<Favorites />} />
+        <Route path="user/:username" element={<UserSettingsPage />} />
         {!isLogged && (
           <>
             <Route path="login" element={<LoginPage />} />
@@ -63,7 +64,6 @@ const renderApp = (isLogged, isAdmin) => {
           <>
             <Route path="create-post" element={<CreatePostPage />} />
             <Route path="posts/favorites" element={<Favorites fav={true} />} />
-            <Route path="user-settings" element={<UserSettingsPage />} />
           </>
         )}
         {isAdmin && <Route path="admin-users" element={<AdminUsersPage />} />}

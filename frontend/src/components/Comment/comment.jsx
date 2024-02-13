@@ -2,7 +2,7 @@ import "./comment.sass";
 
 export const CommentComponent = ({comment}) => {
   // JS
-  const urlDelete = "http://localhost/testFinalProjects/deleteComment.php";
+  const urlDelete = "http://localhost/testFinalProjects/new/actions/deleteData/deleteComment.php";
   const cookies = document.cookie.split(";");
 
   let userId;
@@ -34,7 +34,7 @@ export const CommentComponent = ({comment}) => {
     <div className="comentario mb-3" id={comment.CommentId}>
       <p className="mb-2">{comment.CommentText}</p>
       <p className="text-end mb-2">
-        {checkComment()} {returnDate(comment.CommentDate)} | <a href="">{comment.CommentUsername}</a>
+        {checkComment()} {returnDate(comment.CommentDate)} | <a href={'/user/'+comment.CommentUsername}>{comment.CommentUsername}</a>
       </p>
     </div>
   );

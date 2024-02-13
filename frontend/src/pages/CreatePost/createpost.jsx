@@ -6,8 +6,8 @@ import './createpost.sass';
 export const CreatePostPage = () => {
     // JS
     // const url = 'url to aws';
-    const urlPost = 'http://localhost/testFinalProjects/insertData/insertPost.php';
-    const urlLabel = 'http://localhost/testFinalProjects/retrieveData/getAllLabels.php';
+    const urlPost = 'http://localhost/testFinalProjects/new/actions/createData/createPost.php';
+    const urlLabel = 'http://localhost/testFinalProjects/new/actions/readData/getAllLabels.php';
     const [labels, setLabels] = useState([]);
     const [labelsCopy, setLabelsCopy] = useState([]);
     const [selected, setSelected] = useState([]);

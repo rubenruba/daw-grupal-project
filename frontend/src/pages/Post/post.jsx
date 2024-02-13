@@ -8,8 +8,8 @@ import { CommentComponent } from '../../components/Comment/comment';
 
 export const PostPage = () => {
   // JS
-  const urlPost = "http://localhost/testFinalProjects/retrieveData/getOnePost.php";
-  const urlComment = "http://localhost/testFinalProjects/insertData/addComment.php";
+  const urlPost = "http://localhost/testFinalProjects/new/actions/readData/getOnePost.php";
+  const urlComment = "http://localhost/testFinalProjects/new/actions/createData/createComment.php";
   const { postId } = useParams('postId');
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
@@ -63,7 +63,7 @@ export const PostPage = () => {
           <div className='d-flex flex-column flex-sm-row justify-content-between'>
             <div className='d-flex flex-column justify-content-between'>
               <p>{post.PostText}</p>
-              <p><a href=''>{post.PostUsername}</a> | {returnDate(post.PostDate)}</p>
+              <p><a href={'/user/'+post.PostUsername}>{post.PostUsername}</a> | {returnDate(post.PostDate)}</p>
             </div>
             <ul className='list-group ms-sm-3'>
               {files.map(file => {
@@ -103,6 +103,7 @@ export const PostPage = () => {
         </article>
 
         <aside className='d-none d-sm-block text-center'>
+          <h2 className='mt-3 fw-bold'>Labels</h2>
           <ul className='list-group p-4 align-items-center'>
             {labels.map(label => {
               return <li className='list-group-item label'><a href=''>{label.Name}</a></li>

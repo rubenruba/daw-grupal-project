@@ -2,7 +2,7 @@ import './menu.sass';
 
 export const MenuComponent = () => {
     // JS
-    const urlLogout = 'http://localhost/testFinalProjects/logout.php';
+    const urlLogout = 'http://localhost/testFinalProjects/new/auth/logout.php';
 
     const logout = () => {
         fetch(urlLogout);
