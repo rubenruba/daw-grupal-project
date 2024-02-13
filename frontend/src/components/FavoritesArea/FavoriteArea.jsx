@@ -1,11 +1,14 @@
-import './FavoriteArea.sass';
 import React, { useEffect, useState } from 'react';
+import questionsImage from '../../assets/img/questions.png';
+import starSolidImage from '../../assets/svg/star-solid.svg';
+import starOutlinedImage from '../../assets/svg/star-outlined.svg';
+import './FavoriteArea.sass';
 
 export const FavoriteArea = ({post}) => {
     // JS
     const addFav = 'http://localhost/testFinalProjects/new/actions/createData/createFavorite.php';
     const removeFav = 'http://localhost/testFinalProjects/new/actions/deleteData/deleteFavorite.php';
-    const [starPath, setStarPath] = useState('/svg/star-outlined.svg');
+    const [starPath, setStarPath] = useState(starOutlinedImage);
 
     // Cookies del navegador
     const cookies = document.cookie.split(";");
@@ -16,22 +19,22 @@ export const FavoriteArea = ({post}) => {
     
     useEffect(() => {
         if(post.IsFavorite === 1){
-            setStarPath('/svg/star-solid.svg');
+            setStarPath(starSolidImage);
         }
     })
 
     const changePath = () => {
-        if(starPath === '/svg/star-outlined.svg'){
-            setStarPath('/svg/star-solid.svg');
+        if(starPath === starOutlinedImage){
+            setStarPath(starSolidImage);
             addFavourite();
         } else {
-            setStarPath('/svg/star-outlined.svg');
+            setStarPath(starOutlinedImage);
             deleteFavourite();
         }
     }
 
     const addFavourite = () => {
-        fetch(`${addFav}?postId=${post.PostId}&userId=${userId}`, { method: 'GET' });
+        fetch(`${addFav}?postId=${post.PostId}&userId=${userId}`, { method: 'POST' });
     }
 
     const deleteFavourite = () => {
@@ -46,7 +49,7 @@ export const FavoriteArea = ({post}) => {
     return (
         <div className="container-f">
             <div className="simbolos">
-                <img src="/preguntas-mas-frecuentes.png" alt="" />
+                <img src={questionsImage} alt="" />
                 <button className='star' onClick={changePath}>
                     <img src={starPath} alt="Star"/>
                 </button>

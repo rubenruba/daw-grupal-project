@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FooterComponent } from '../../components/Footer/footer';
 import { HeaderComponent } from '../../components/Header/header';
+import fileImage from '../../assets/img/file.png';
 import './createpost.sass';
 
 export const CreatePostPage = () => {
@@ -122,7 +123,7 @@ export const CreatePostPage = () => {
                             <p className='mt-5'>Adjuntar archivos</p>
                             {/* TO DO - Add an input to insert files */}
                             <input type="file" id="fileInput" name='files[]' onChange={handleFileChange} multiple />
-                            <img src="/adjuntar.png" id='adjunta' alt="" />
+                            <img src={fileImage} id='adjunta' alt="" />
                         </div>
                         <button className='p-2 mt-5'>Publicar</button>
                     </div>

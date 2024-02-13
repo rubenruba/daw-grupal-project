@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FooterComponent } from "../../components/Footer/footer";
 import { HeaderComponent } from "../../components/Header/header";
+import userImage from '../../assets/img/user.png';
 import "./userSettings.sass";
 
 
@@ -38,7 +39,7 @@ export const UserSettingsPage = () => {
       <div className="d-flex flex-column align-items-center justify-content-center p-4 settings-container">
         <div className="d-flex flex-column justify-content-center align-items-center p-3 sm-mx-300 recuadro">
           <div className="d-flex flex-column align-items-center">
-            <img src="/circle-user-regular.svg" alt="user" id="user" />
+            <img src={userImage} alt="user" id="user" />
             <h4>{user.Username}</h4>
           </div>
           <div className="container mt-3">

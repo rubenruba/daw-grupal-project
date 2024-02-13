@@ -1,7 +1,9 @@
-import "./landing.sass";
 import { HeaderComponent } from "../../components/Header/header";
 import { FooterComponent } from "../../components/Footer/footer";
 import { Link } from 'react-router-dom';
+import chatImage from '../../assets/svg/chat.svg';
+import starSolidImage from '../../assets/svg/star-solid.svg';
+import "./landing.sass";
 
 
 export const LandginPage = () => {
@@ -27,14 +29,14 @@ export const LandginPage = () => {
           </div>
         </div>
         <div className="d-flex flex-column justify-content-center align-items-center p-3 mt-5 box3">
-          <img src="/chat_comentarios.svg" alt="chats" className="mb-3 chats" />
+          <img src={chatImage} alt="chats" className="mb-3 chats" />
           <p>
             Communicate with your friends to solve study problems through a chat
             and where you can create groups.
           </p>
           <br />
           <img
-            src="/guardar_rellenado.svg"
+            src={starSolidImage}
             alt="guardar_post"
             className="mt-5 mb-3 guardarFavorito"
           />

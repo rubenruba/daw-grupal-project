@@ -1,6 +1,8 @@
 import { ButtonsNavComponent } from '../ButtonsNav/buttonsNav';
 import { MenuComponent } from '../Menu/menu';
 import { SearchBarComponent } from '../SearchBar/SearchBar';
+import desktopLogo from '../../assets/img/desktop-logo.png';
+import mobileLogo from '../../assets/img/mobile-logo.png';
 import './header.sass';
 
 export const HeaderComponent = () => {
@@ -24,8 +26,8 @@ export const HeaderComponent = () => {
     // HTML
     return (
         <header>
-            <img src='/logo.png' alt="" id='logo' className='d-none d-sm-block' />
-            <img src='/logo_movil.png' alt="" id='mobile-logo' className='d-block d-sm-none'/>
+            <img src={desktopLogo} alt="Desktop logo" id='logo' className='d-none d-sm-block' />
+            <img src={mobileLogo} alt="Mobile logo" id='mobile-logo' className='d-block d-sm-none'/>
             <SearchBarComponent footer={false}></SearchBarComponent>
             {showMenu()}
         </header>

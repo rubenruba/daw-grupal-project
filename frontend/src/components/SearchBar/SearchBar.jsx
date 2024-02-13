@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import "./SearchBar.sass";
+import lens from '../../assets/img/lens.png';
+import whiteLens from '../../assets/img/white-lens.png';
 
 export const SearchBarComponent = ({ footer }) => {
   // JS
@@ -13,7 +14,7 @@ export const SearchBarComponent = ({ footer }) => {
   };
 
   const isFooterImage = () => {
-    return footer === true ? "/img/Search.png" : "/lupa.png";
+    return footer === true ?whiteLens :lens;
   };
 
   const searchPosts = () => {
