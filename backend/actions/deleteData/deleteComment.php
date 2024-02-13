@@ -3,9 +3,6 @@
 
     $commentId = $_GET['commentId'];
 
-    session_start();
-    $userId = $_SESSION['userId'];
-
     try {
         $db = new PDO("mysql:host=$serverName;dbname=$database", $user, $password);
 

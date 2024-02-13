@@ -17,7 +17,6 @@
             LEFT JOIN `Post` ON `User`.`UserId` = `Post`.`UserId`
             LEFT JOIN `Comment` ON `User`.`UserId` = `Comment`.`UserId`;"
         );
-            // WHERE `User`.`Admin` = '0';"
 
         $users = array();
 
