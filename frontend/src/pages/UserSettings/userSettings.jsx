@@ -1,91 +1,79 @@
-import "./userSettings.sass";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { FooterComponent } from "../../components/Footer/footer";
-import { SearchBarComponent } from "../../components/SearchBar/SearchBar";
-import React, { useState } from 'react';
 import { HeaderComponent } from "../../components/Header/header";
+import userImage from '../../assets/img/user.png';
+import "./userSettings.sass";
+
+
 export const UserSettingsPage = () => {
-  // JS
-  const [isChecked, setIsChecked] = useState(false);
-  const handleChange = () => {
-    setIsChecked(!isChecked);
-    oscurecer();
-  }
-  function oscurecer() {
-      let he=document.getElementsByTagName("header")[0];
-      let fo=document.getElementsByTagName("footer")[0];
-      he.classList.add("modooscuro");
-      fo.classList.add("modooscuro");
-      if(isChecked){
-        he.classList.remove("modooscuro");
-        fo.classList.remove("modooscuro");
-      }
-  }
+  //JS 
+  const urlUser = "http://localhost/testFinalProjects/new/actions/readData/getOneUser.php";
+  const { username } = useParams('username');
+  const [user, setUser] = useState({});
+
+  // Cookies
+  const cookies = document.cookie.split(";");
+  let userId;
+
+  cookies.forEach((cookie) => {
+    if (cookie.includes("userId")) userId = cookie.split("=")[1];
+  });
+
+  useEffect(() => {
+    fetch(`${urlUser}?username=${username}`, { method: 'GET' })
+    .then((response) => {
+      if(!response.ok) throw new Error('No existe el usuario');
+      return response.json();
+    })
+    .then((data) => {
+      setUser(data[0])
+    })
+    .catch((error) => console.log(error));
+  }, [])
 
   // HTML
   return (
     <>
       <HeaderComponent></HeaderComponent>
-      <div className="d-flex flex-column align-items-center p-4 settings-container">
+      <div className="d-flex flex-column align-items-center justify-content-center p-4 settings-container">
         <div className="d-flex flex-column justify-content-center align-items-center p-3 sm-mx-300 recuadro">
           <div className="d-flex flex-column align-items-center">
-            <img src="/circle-user-regular.svg" alt="user" id="user" />
-            <h4>Welcome, name</h4>
+            <img src={userImage} alt="user" id="user" />
+            <h4>{user.Username}</h4>
           </div>
-          <div class="container mt-3">
+          <div className="container mt-3">
             <form action="#">
-              <div class="row mb-3">
+              <div className="row mb-3">
                 <div className="col">
-                  <label htmlFor="#">Nombre</label>
-                  <br />
-                  <input type="text" name="name" id="name" />
+                  <label htmlFor="name">Nombre</label>
+                  <input type="text" name="name" readOnly value={user.Name}/>
                 </div>
                 <div className="col">
-                  <label htmlFor="#">Apellidos</label>
-                  <br />
-                  <input type="text" name="surname" id="surname" />
+                  <label htmlFor="surname">Apellidos</label>
+                  <input type="text" name="surname" readOnly value={user.Surname}/>
                 </div>
               </div>
 
-              <div class="row mb-3">
-                <div className="col">
-                  <label htmlFor="#">Email</label>
-                  <br />
-                  <input type="text" name="email" id="email" />
-                </div>
-                <div className="col">
-                  <label htmlFor="#">Nombre de usuario</label>
-                  <br />
-                  <input type="text" name="username" id="username" />
-                </div>
-              </div>
               <div className="row mb-3">
                 <div className="col">
-                  <button type="submit" className="btn btn-primary btn-md">
-                    Reset Password
-                  </button>
+                  <label htmlFor="email">Email</label>
+                  <input type="text" name="email" readOnly value={user.Email}/>
                 </div>
                 <div className="col">
-                  <div class="form-check form-switch d-flex flex-row justify-content-center mt-3">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="theme"
-                      checked={isChecked}
-                      onChange={handleChange}
-                    />
-                    <label className="form-check-label" for="theme">
-                      Dark Theme
-                    </label>
-                  </div>
+                  <label htmlFor="username">Nombre de usuario</label>
+                  <input type="text" name="username" readOnly value={user.Username}/>
                 </div>
               </div>
-              <div class="input-group d-flex flex-column justify-content-start mt-4">
-                <label>About me</label>
-                <textarea
-                  class="form-control w-100"
-                  aria-label="With textarea"
-                ></textarea>
-              </div>
+              {userId == user.UserId && (
+                <div className="row mb-3">
+                  <div className="col">
+                    <button type="submit" className="btn btn-primary btn-md">
+                      Reset Password
+                    </button>
+                  </div>
+                </div>
+              )}
             </form>
           </div>
         </div>

@@ -7,8 +7,8 @@ import './adminUsers.sass';
 
 export const AdminUsersPage = () => {
     // JS
-    const urlGetUser = 'http://localhost/testFinalProjects/new/actions/readData/getUsers.php';
-    
+    const urlGetUser = 'http://localhost/testFinalProjects/new/actions/readData/getAllUsers.php';
+    const urlDeleteUser = 'http://localhost/testFinalProjects/new/actions/deleteData/deleteUser.php';
     const [users, setUsers] = useState([]);
 
     useEffect(() => {

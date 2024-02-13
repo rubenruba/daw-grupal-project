@@ -1,55 +1,91 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { FavoriteArea } from "../../components/FavoritesArea/FavoriteArea";
 import { FooterComponent } from "../../components/Footer/footer";
 import { HeaderComponent } from "../../components/Header/header";
 import "./search_favorites.sass";
 
-export const Favorites = () => {
+export const Favorites = (prop) => {
   // JS
-  const url = "http://localhost/testFinalProjects/retrieveData/getAllPost.php";
+  const urlAllPosts =
+    "http://localhost/testFinalProjects/new/actions/readData/getAllPost.php";
+  const urlSearch =
+    "http://localhost/testFinalProjects/new/actions/readData/searchPost.php";
+  const urlFav =
+    "http://localhost/testFinalProjects/new/actions/readData/getAllFavPosts.php";
+
+  const { title } = useParams("title");
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    const fetchPosts = () => {
-      fetch(url, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Error al obtener los usuarios");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setPosts(data);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    };
+  // Cookies
+  const cookies = document.cookie.split(";");
+  let userId;
 
-    fetchPosts();
+  cookies.forEach((cookie) => {
+    if (cookie.includes("userId")) userId = cookie.split("=")[1];
+  });
+
+  useEffect(() => {
+    console.log(prop.fav);
+    if (prop?.fav) {
+      getAllFavPosts();
+    } else if (title) {
+      getSearched();
+    } else {
+      getAllPosts();
+    }
   }, []);
+
+  const getAllPosts = () => {
+    fetch(`${urlAllPosts}?userId=${userId}`, { method: "GET" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al obtener los posts");
+        }
+        return response.json();
+      })
+      .then((data) => setPosts(data))
+      .catch((error) => console.error("Error:", error));
+  };
+
+  const getSearched = () => {
+    fetch(`${urlSearch}?title=${title}&userId=${userId}`, { method: "GET" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al obtener los posts");
+        }
+        return response.json();
+      })
+      .then((data) => setPosts(data))
+      .catch((error) => console.error("Error:", error));
+  };
+
+  const getAllFavPosts = () => {
+    fetch(`${urlFav}?userId=${userId}`, { method: "GET" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al obtener los posts");
+        }
+        return response.json();
+      })
+      .then((data) => setPosts(data))
+      .catch((error) => console.error("Error:", error));
+  };
 
   // HTML
   return (
     <>
       <HeaderComponent></HeaderComponent>
 
-      <div className="favorites-conatiner">
-        <div className="filter ms-lg-5">
-          <img src="/filtro.png" alt="" />
-        </div>
-
+      <div className="favorites-container">
         {posts.map((post) => {
           return <FavoriteArea key={post.PostId} post={post}></FavoriteArea>;
         })}
 
-        <FooterComponent></FooterComponent>
+        {posts.length <= 0 && <h2>No se ha encontrado ningún post</h2>}
       </div>
+
+      <FooterComponent></FooterComponent>
     </>
   );
 };

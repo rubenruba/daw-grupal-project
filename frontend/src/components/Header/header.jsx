@@ -1,5 +1,8 @@
 import { ButtonsNavComponent } from '../ButtonsNav/buttonsNav';
 import { MenuComponent } from '../Menu/menu';
+import { SearchBarComponent } from '../SearchBar/SearchBar';
+import desktopLogo from '../../assets/img/desktop-logo.png';
+import mobileLogo from '../../assets/img/mobile-logo.png';
 import './header.sass';
 
 export const HeaderComponent = () => {
@@ -23,13 +26,9 @@ export const HeaderComponent = () => {
     // HTML
     return (
         <header>
-            <a href='/'>
-                <img src='/logo.png' alt="logo" id='logo' />
-            </a>
-            <div className='d-flex justify-content-between d-none d-sm-flex' id='search-container'>
-                <input type="text" placeholder=' Search... ' className='form-control me-4' id='cabe' />
-                <img src="/lupa.png" alt="search icon" />
-            </div>
+            <img src={desktopLogo} alt="Desktop logo" id='logo' className='d-none d-sm-block' />
+            <img src={mobileLogo} alt="Mobile logo" id='mobile-logo' className='d-block d-sm-none'/>
+            <SearchBarComponent footer={false}></SearchBarComponent>
             {showMenu()}
         </header>
     )

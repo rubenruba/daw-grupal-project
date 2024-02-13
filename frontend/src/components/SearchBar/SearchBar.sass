@@ -1,28 +1,40 @@
 @import "../../styles/variables.sass"
-#searchBar
-  border: $whiteLigth solid 3.5px
-  border-radius: 8px
-  input
-      width: 75%
-      margin: 7px
-      background-color: $blueLigth
-      color: $whiteLigth
-      border: 0
-      &::placeholder
-        color: $whiteLigth
+
+.header-search, .footer-search
+  border-radius: 10px
   img
-      width: 20px
-      height: 20px
-      margin-left: 5px
-      
-@media screen and (max-width: 576px) 
-  #searchBar
-    width: 200px
+    cursor: pointer
+    border-radius: 8px
+    margin-right: 5px
+  input
+    border: none
+    border-radius: 10px
+    padding: 10px
+    &:focus
+      border-color: inherit
+      box-shadow: none
+      background-color: transparent
+      color: inherit
 
-@media screen and (min-width: 576px) and (max-width: 992px) 
-  #searchBar
-    width: 200px
+.footer-search
+  border: 2px solid $whiteLigth
+  width: calc( 100% - 80px )
+  margin: 10px 40px
+  img
+    width: 20px
+    height: 20px
+  input
+    background-color: $blueLigth
+    color: $whiteLigth
+    &::placeholder
+      color: $whiteLigth
 
-@media screen and (min-width: 992px)
-  #searchBar
-      width: 250px
+.header-search
+  border: 2px solid $blueLigth
+  width: 30%
+  max-width: 400px
+  input
+    background-color: $greenLigth
+    color: $blueLigth
+    &::placeholder
+      color: $blueLigth

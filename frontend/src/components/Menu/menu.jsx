@@ -1,8 +1,9 @@
 import './menu.sass';
+import user from '../../assets/img/user.png';
 
 export const MenuComponent = () => {
     // JS
-    const urlLogout = 'http://localhost/testFinalProjects/logout.php';
+    const urlLogout = 'http://localhost/testFinalProjects/new/auth/logout.php';
 
     const logout = () => {
         fetch(urlLogout);
@@ -12,11 +13,12 @@ export const MenuComponent = () => {
 
     // HTML
     return (
-        <div class="menu-container">
-            <img src="/circle-user.png" alt="user" id='user'/>
+        <div className="menu-container">
+            <img src={user} alt="user" id='user'/>
             <ul className='menu'>
                 <li><a href="/create-post">New post</a></li>
                 <li><a href="/user-settings">Settings</a></li>
+                <li><a href="/posts/favorites">Favorites</a></li>
                 <li onClick={logout}>Logout</li>
             </ul>
         </div>
