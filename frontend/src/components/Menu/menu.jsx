@@ -3,7 +3,7 @@ import user from '../../assets/img/user.png';
 
 export const MenuComponent = () => {
     // JS
-    const urlLogout = 'http://localhost/testFinalProjects/new/auth/logout.php';
+    const urlLogout = 'http://ec2-34-207-224-244.compute-1.amazonaws.com/auth/logout.php';
 
     const logout = () => {
         fetch(urlLogout);
