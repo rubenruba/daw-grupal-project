@@ -8,8 +8,8 @@ import { CommentComponent } from '../../components/Comment/comment';
 
 export const PostPage = () => {
   // JS
-  const urlPost = "http://ec2-18-234-198-232.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/getOnePost.php";
-  const urlComment = "http://ec2-18-234-198-232.compute-1.amazonaws.com/testFinalProjects/new/actions/createData/createComment.php";
+  const urlPost = "http://ec2-35-168-11-113.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/getOnePost.php";
+  const urlComment = "http://ec2-35-168-11-113.compute-1.amazonaws.com/testFinalProjects/new/actions/createData/createComment.php";
   const { postId } = useParams('postId');
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
