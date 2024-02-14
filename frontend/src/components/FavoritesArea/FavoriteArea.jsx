@@ -6,8 +6,8 @@ import './FavoriteArea.sass';
 
 export const FavoriteArea = ({post}) => {
     // JS
-    const addFav = 'http://ec2-54-208-219-192.compute-1.amazonaws.com/testFinalProjects/new/actions/createData/createFavorite.php';
-    const removeFav = 'http://ec2-54-208-219-192.compute-1.amazonaws.com/testFinalProjects/new/actions/deleteData/deleteFavorite.php';
+    const addFav = 'http://ec2-44-204-189-75.compute-1.amazonaws.com/testFinalProjects/new/actions/createData/createFavorite.php';
+    const removeFav = 'http://ec2-44-204-189-75.compute-1.amazonaws.com/testFinalProjects/new/actions/deleteData/deleteFavorite.php';
     const [starPath, setStarPath] = useState(starOutlinedImage);
 
     // Cookies del navegador

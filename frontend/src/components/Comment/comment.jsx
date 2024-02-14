@@ -2,7 +2,7 @@ import "./comment.sass";
 
 export const CommentComponent = ({comment}) => {
   // JS
-  const urlDelete = "http://ec2-54-208-219-192.compute-1.amazonaws.com/testFinalProjects/new/actions/deleteData/deleteComment.php";
+  const urlDelete = "http://ec2-44-204-189-75.compute-1.amazonaws.com/testFinalProjects/new/actions/deleteData/deleteComment.php";
   const cookies = document.cookie.split(";");
 
   let userId;

@@ -3,7 +3,7 @@ import "./login.sass";
 
 export const LoginPage = () => {
   // JS
-  const url = 'http://ec2-54-208-219-192.compute-1.amazonaws.com/testFinalProjects/new/auth/login.php';
+  const url = 'http://ec2-44-204-189-75.compute-1.amazonaws.com/testFinalProjects/new/auth/login.php';
   const [validEmail, setValidEmail] = useState(true);
 
   const validateEmail = (event) => {
