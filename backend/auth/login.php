@@ -24,7 +24,7 @@
             if(password_verify($loginPass, $user['Password'])){
                 startSession($user); // Guarda el id de usuario en la sesión
                 setcookie("userId", $user['UserId'], 0, '/'); // Alamcenamos en una cookie en el navegador el userId
-                header('Location: http://localhost:3000/'); // Cambia la url 
+                header('Location: http://ec2-34-207-224-244.compute-1.amazonaws.com/'); // Cambia la url 
             } else {
                 echo "Contraseña incorrecta";
             }

@@ -21,7 +21,7 @@
         startSession($dbQuery->fetchAll()[0]); // User
 
         // Cambia la url a landing
-        header('Location: http://localhost:3000/');
+        header('Location: http://ec2-34-207-224-244.compute-1.amazonaws.com/');
 
         // Cierra la conexión y la query
         $db = null;
