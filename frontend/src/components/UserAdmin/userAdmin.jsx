@@ -6,11 +6,11 @@ import "./userAdmin.sass";
 export const UserAdminComponent = ({ user }) => {
   // JS
   const urlDeleteUser =
-    "http://ec2-34-207-224-244.compute-1.amazonaws.com/actions/deleteData/deleteUser.php";
+    "http://ec2-34-207-224-244.compute-1.amazonaws.com/backend/actions/deleteData/deleteUser.php";
   const urlDeleteComment =
-    "http://ec2-34-207-224-244.compute-1.amazonaws.com/actions/deleteData/deleteComment.php";
+    "http://ec2-34-207-224-244.compute-1.amazonaws.com/backend/actions/deleteData/deleteComment.php";
   const urlDeletePost =
-    "http://ec2-34-207-224-244.compute-1.amazonaws.com/actions/deleteData/deletePost.php";
+    "http://ec2-34-207-224-244.compute-1.amazonaws.com/backend/actions/deleteData/deletePost.php";
   const [open, setOpen] = useState(false);
 
   const deleteUser = (userId) => {

@@ -8,7 +8,7 @@ import "./userSettings.sass";
 
 export const UserSettingsPage = () => {
   //JS 
-  const urlUser = "http://ec2-34-207-224-244.compute-1.amazonaws.com/actions/readData/getOneUser.php";
+  const urlUser = "http://ec2-34-207-224-244.compute-1.amazonaws.com/backend/actions/readData/getOneUser.php";
   const { username } = useParams('username');
   const [user, setUser] = useState({});
 

@@ -14,8 +14,8 @@ import { NotFoundPage } from './pages/NotFound/NotFound';
 import { ResetPasswordPage } from './pages/ResetPassword/resetpassword';
 import { ContactUs } from './pages/ContacUs/contactus';
 
-const urlLogged = "http://ec2-34-207-224-244.compute-1.amazonaws.com/auth/isLogged.php";
-const urlAdmin = "http://ec2-34-207-224-244.compute-1.amazonaws.com/auth/isAdmin.php";
+const urlLogged = "http://ec2-34-207-224-244.compute-1.amazonaws.com/backend/auth/isLogged.php";
+const urlAdmin = "http://ec2-34-207-224-244.compute-1.amazonaws.com/backend/auth/isAdmin.php";
 const cookies = document.cookie.split(";");
 
 let userId;
