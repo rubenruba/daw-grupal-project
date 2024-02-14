@@ -25,10 +25,6 @@
                         VALUES('$fileData', '$postId', '$fileType', '$fileName')";
 
                     $db->query($dbQuery);
-
-                    echo "NOMBRE: $fileName <br>";
-                    echo "TIPO: $fileType <br>";
-                    echo "TAMAÑO: $fileSize <br>";
                 }
             } catch (Error $e){
                 echo $e;
