@@ -26,6 +26,8 @@
         insertFiles($userId);
         insertLabel($userId);
 
+        header("Location: http://ec2-52-200-109-82.compute-1.amazonaws.com/posts")
+
     } catch (PDOException $e) {
         echo "ERROR: ".$e;
         die();

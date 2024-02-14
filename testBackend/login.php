@@ -25,7 +25,7 @@
                 echo "La contraseña coincide, iniciando sesión...";
                 setcookie('userId', $user['UserId'], 0, '/'); // Guarda cookie en el navegador
                 startSession($user); // Guarda el id de usuario en la sesión
-                header('Location: http://ec2-34-207-224-244.compute-1.amazonaws.com/'); // Cambia la url 
+                header('Location: http://ec2-52-200-109-82.compute-1.amazonaws.com/'); // Cambia la url 
             } else {
                 echo "Contraseña incorrecta";
             }
