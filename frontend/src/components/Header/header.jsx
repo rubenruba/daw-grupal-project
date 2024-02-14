@@ -23,11 +23,15 @@ export const HeaderComponent = () => {
         }
     }
 
+    const toLanding = () => {
+        window.location.href = '/';
+    }
+
     // HTML
     return (
         <header>
-            <img src={desktopLogo} alt="Desktop logo" id='logo' className='d-none d-sm-block' />
-            <img src={mobileLogo} alt="Mobile logo" id='mobile-logo' className='d-block d-sm-none'/>
+            <img src={desktopLogo} onClick={toLanding} alt="Desktop logo" id='logo' className='d-none d-sm-block' />
+            <img src={mobileLogo} onClick={toLanding} alt="Mobile logo" id='mobile-logo' className='d-block d-sm-none'/>
             <SearchBarComponent footer={false}></SearchBarComponent>
             {showMenu()}
         </header>

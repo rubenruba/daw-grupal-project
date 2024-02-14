@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FooterComponent } from "../../components/Footer/footer";
 import { HeaderComponent } from "../../components/Header/header";
-import userImage from '../../assets/img/user.png';
+import userImage from '../../assets/img/user-white.png';
 import "./userSettings.sass";
 
 

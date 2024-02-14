@@ -21,7 +21,7 @@ export const FavoriteArea = ({post}) => {
         if(post.IsFavorite === 1){
             setStarPath(starSolidImage);
         }
-    })
+    }, [])
 
     const changePath = () => {
         if(starPath === starOutlinedImage){
