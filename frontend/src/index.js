@@ -49,10 +49,12 @@ const renderApp = (isLogged, isAdmin) => {
         <Route path="/" element={<LandginPage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="contact-us" element={ <ContactUs/> } />
-        <Route path="post/:postId" element={ <PostPage/> } />
+        {/* <Route path="post/:postId" element={ <PostPage/> } /> */}
+        <Route path="post" element={ <PostPage/> } />
         <Route path="posts" element={<Favorites />} />
-        <Route path="posts/search/:title" element={<Favorites />} />
-        <Route path="user/:username" element={<UserSettingsPage />} />
+        {/* <Route path="posts/search/:title" element={<Favorites />} /> */}
+        {/* <Route path="user/:username" element={<UserSettingsPage />} /> */}
+        <Route path="user" element={<UserSettingsPage />} />
         {!isLogged && (
           <>
             <Route path="login" element={<LoginPage />} />
@@ -63,7 +65,7 @@ const renderApp = (isLogged, isAdmin) => {
         {isLogged && (
           <>
             <Route path="create-post" element={<CreatePostPage />} />
-            <Route path="posts/favorites" element={<Favorites fav={true} />} />
+            <Route path="favorites" element={<Favorites fav={true} />} />
           </>
         )}
         {isAdmin && <Route path="admin-users" element={<AdminUsersPage />} />}

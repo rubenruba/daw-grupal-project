@@ -19,9 +19,9 @@ export const SearchBarComponent = ({ footer }) => {
 
   const searchPosts = () => {
     if(title === ''){
-      window.location = `/posts/`;
+      window.location = `/posts`;
     } else {
-      window.location = `/posts/search/${title}`;
+      window.location = `/posts?title=${title}`;
     }
   }
 

@@ -9,7 +9,8 @@ import "./userSettings.sass";
 export const UserSettingsPage = () => {
   //JS 
   const urlUser = "http://ec2-52-200-109-82.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/getOneUser.php";
-  const { username } = useParams('username');
+  const queryParams = new URLSearchParams(window.location.search);
+  const username = queryParams.get('username');
   const [user, setUser] = useState({});
 
   // Cookies

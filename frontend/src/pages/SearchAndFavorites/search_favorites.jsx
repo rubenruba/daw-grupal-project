@@ -14,7 +14,9 @@ export const Favorites = (prop) => {
   const urlFav =
     "http://ec2-52-200-109-82.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/getAllFavPosts.php";
 
-  const { title } = useParams("title");
+  const queryParams = new URLSearchParams(window.location.search);
+  const title = queryParams.get('title');
+
   const [posts, setPosts] = useState([]);
 
   // Cookies

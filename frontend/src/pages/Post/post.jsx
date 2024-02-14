@@ -10,7 +10,9 @@ export const PostPage = () => {
   // JS
   const urlPost = "http://ec2-52-200-109-82.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/getOnePost.php";
   const urlComment = "http://ec2-52-200-109-82.compute-1.amazonaws.com/testFinalProjects/new/actions/createData/createComment.php";
-  const { postId } = useParams('postId');
+  // const { postId } = useParams('postId');
+  const queryParams = new URLSearchParams(window.location.search);
+  const postId = queryParams.get('postId');
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
   const [files, setFiles] = useState([]);
@@ -63,7 +65,7 @@ export const PostPage = () => {
           <div className='d-flex flex-column flex-sm-row justify-content-between'>
             <div className='d-flex flex-column justify-content-between'>
               <p>{post.PostText}</p>
-              <p><a href={'/user/'+post.PostUsername}>{post.PostUsername}</a> | {returnDate(post.PostDate)}</p>
+              <p><a href={'/user?username='+post.PostUsername}>{post.PostUsername}</a> | {returnDate(post.PostDate)}</p>
             </div>
             <ul className='list-group ms-sm-3'>
               {files.map(file => {
