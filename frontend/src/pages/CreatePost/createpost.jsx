@@ -122,8 +122,10 @@ export const CreatePostPage = () => {
                         <div className='mb-4'>
                             <p className='mt-5'>Adjuntar archivos</p>
                             {/* TO DO - Add an input to insert files */}
+
                             <input type="file" id="fileInput" name='files[]' onChange={handleFileChange} multiple />
                             <img src={fileImage} id='adjunta' alt="" />
+
                         </div>
                         <button className='p-2 mt-5'>Publicar</button>
                     </div>

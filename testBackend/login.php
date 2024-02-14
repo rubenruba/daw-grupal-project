@@ -23,6 +23,7 @@
         if($loginEm === $user['Email']){
             if(password_verify($loginPass, $user['Password'])){
                 echo "La contraseña coincide, iniciando sesión...";
+                setcookie('userId', $user['UserId'], 0, '/'); // Guarda cookie en el navegador
                 startSession($user); // Guarda el id de usuario en la sesión
                 header('Location: http://localhost:3000/'); // Cambia la url 
             } else {

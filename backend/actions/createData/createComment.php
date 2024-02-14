@@ -1,9 +1,8 @@
 <?php
-    include '../variables.php';
-    include './insertFiles.php';
+    include '../../variables.php';
 
-    $text = $_POST['postText'];
-    $title = $_POST['title'];
+    $commentText = $_POST['comment'];
+    $postId = $_POST['postId'];
 
     session_start();
     $userId = $_SESSION['userId'];
@@ -13,16 +12,13 @@
     try {
         $db = new PDO("mysql:host=$serverName;dbname=$database", $user, $password);
 
-        $dbQuery = "INSERT INTO `Post`(`UserId`, `Title`, `Text`, `Date`)
-            VALUES('$userId', '$title', '$text', '$date');"; 
+        $dbQuery = "INSERT INTO `Comment`(`UserId`, `PostId`, `Text`, `Date`)
+            VALUES('$userId', '$postId', '$commentText', '$date');"; 
 
         $db->query($dbQuery);
 
-        
         $db = null;
         $dbQuery = null;
-
-        insertFiles($userId);
 
     } catch (PDOException $e) {
         echo "ERROR: ".$e;
