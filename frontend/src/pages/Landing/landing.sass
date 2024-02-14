@@ -1,0 +1,65 @@
+@import ../../styles/variables.sass
+
+@mixin boxes($color)
+    background-color: $color
+    border-radius: 12px
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    width: 300px
+    transition: box-shadow 0.3s
+    &:hover
+        box-shadow: 0 0 10px 8px rgba(0, 0, 0, 0.3)
+    button:hover
+        background-color: #52489C
+
+@mixin buttons($color1, $color2)
+    background-color: $color1
+    color: $color2
+    border: none
+    border-radius: 12px
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    width: 130px
+    font-weight: bold
+    
+.main
+    background-color: $purpleLigth
+
+.box1
+    @include boxes($greenLigth)
+    p
+        color: $blueLigth
+
+.box2
+    @include boxes($blueLigth)
+    p
+        color: $greenLigth
+
+.box3
+    width: 90%
+    p
+        color: $greenLigth
+        text-align: justify
+        font-size: 17px
+        font-weight: bold
+
+.btnStartSearch
+    @include buttons($blueLigth, $whiteLigth)
+
+.btnJoinNow
+    @include buttons($greenLigth, $whiteDark)
+
+.chats
+    width: 70px
+
+.guardarFavorito
+    width: 50px
+@media screen and (max-width: 576px)
+    .main
+        flex-direction: row
+        justify-content: space-around
+
+    .box3
+        font-size: 20px
+
+@media screen and (min-width: 992px)
+    .box3
+        font-size: 25px

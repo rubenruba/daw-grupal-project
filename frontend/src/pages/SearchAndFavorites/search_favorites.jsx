@@ -1,37 +1,91 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { FavoriteArea } from "../../components/FavoritesArea/FavoriteArea";
 import { FooterComponent } from "../../components/Footer/footer";
+import { HeaderComponent } from "../../components/Header/header";
 import "./search_favorites.sass";
 
-export const Favorites = () => {
-    // JS
+export const Favorites = (prop) => {
+  // JS
+  const urlAllPosts =
+    "http://localhost/testFinalProjects/new/actions/readData/getAllPost.php";
+  const urlSearch =
+    "http://localhost/testFinalProjects/new/actions/readData/searchPost.php";
+  const urlFav =
+    "http://localhost/testFinalProjects/new/actions/readData/getAllFavPosts.php";
 
-    // HTML
-    return (
-        <>
+  const { title } = useParams("title");
+  const [posts, setPosts] = useState([]);
 
-            <header>
-                <img src='/logo.png' alt="" id='logo' />
-                <div className='d-flex justify-content-between d-none d-sm-flex' id='search-container'>
-                    <input type="text" placeholder=' Search... ' className='form-control me-4' id='cabe' />
-                    <img src="/lupa.png" alt="" />
-                </div>
-                <img src="/circle-user.png" alt="" id='user' />
-            </header>
-            <div className="favorites-conatiner">
-                <div className="filter ms-lg-5">
-                    <img src="/filtro.png" alt="" />
-                </div>
+  // Cookies
+  const cookies = document.cookie.split(";");
+  let userId;
 
-              <FavoriteArea></FavoriteArea>
-              <FavoriteArea></FavoriteArea>
-              <FavoriteArea></FavoriteArea>
-              
+  cookies.forEach((cookie) => {
+    if (cookie.includes("userId")) userId = cookie.split("=")[1];
+  });
 
-                <FooterComponent></FooterComponent>
-            </div>
-           
+  useEffect(() => {
+    console.log(prop.fav);
+    if (prop?.fav) {
+      getAllFavPosts();
+    } else if (title) {
+      getSearched();
+    } else {
+      getAllPosts();
+    }
+  }, []);
 
+  const getAllPosts = () => {
+    fetch(`${urlAllPosts}?userId=${userId}`, { method: "GET" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al obtener los posts");
+        }
+        return response.json();
+      })
+      .then((data) => setPosts(data))
+      .catch((error) => console.error("Error:", error));
+  };
 
-        </>
-    );
+  const getSearched = () => {
+    fetch(`${urlSearch}?title=${title}&userId=${userId}`, { method: "GET" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al obtener los posts");
+        }
+        return response.json();
+      })
+      .then((data) => setPosts(data))
+      .catch((error) => console.error("Error:", error));
+  };
+
+  const getAllFavPosts = () => {
+    fetch(`${urlFav}?userId=${userId}`, { method: "GET" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al obtener los posts");
+        }
+        return response.json();
+      })
+      .then((data) => setPosts(data))
+      .catch((error) => console.error("Error:", error));
+  };
+
+  // HTML
+  return (
+    <>
+      <HeaderComponent></HeaderComponent>
+
+      <div className="favorites-container">
+        {posts.map((post) => {
+          return <FavoriteArea key={post.PostId} post={post}></FavoriteArea>;
+        })}
+
+        {posts.length <= 0 && <h2>No se ha encontrado ningún post</h2>}
+      </div>
+
+      <FooterComponent></FooterComponent>
+    </>
+  );
 };

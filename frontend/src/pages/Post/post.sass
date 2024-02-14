@@ -1,0 +1,42 @@
+@import '../../styles/variables'
+               
+.post-section
+    height: 100%
+    .post
+        width: 100%
+        .mobile-labels 
+            gap: 15px
+            button
+                background-color: $blueLigth
+                border: none
+                padding: 5px 0
+                border-radius: 10px
+                a
+                    padding: 15px
+                    color: $whiteLigth
+                    text-decoration: none
+    aside
+        border-left: 2px solid $blueLigth 
+        width: 30%
+        max-width: 400px
+        .label
+            margin: 5px 0
+            border-radius: 10px
+            background-color: $blueLigth
+            width: 100%
+            max-width: 200px
+            a
+                color: $whiteLigth
+                text-decoration: none
+    textarea
+        resize: none
+        &:focus
+            border-color: $blueLigth
+            box-shadow: none
+            color: inherit
+    .comment-button
+        background-color: $blueLigth
+        border: none
+        padding: 5px 30px
+        border-radius: 10px
+        color: $whiteLigth
