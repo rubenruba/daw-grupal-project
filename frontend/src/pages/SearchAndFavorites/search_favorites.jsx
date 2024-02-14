@@ -8,11 +8,11 @@ import "./search_favorites.sass";
 export const Favorites = (prop) => {
   // JS
   const urlAllPosts =
-    "http://ec2-3-86-101-85.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/getAllPost.php";
+    "http://ec2-18-234-198-232.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/getAllPost.php";
   const urlSearch =
-    "http://ec2-3-86-101-85.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/searchPost.php";
+    "http://ec2-18-234-198-232.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/searchPost.php";
   const urlFav =
-    "http://ec2-3-86-101-85.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/getAllFavPosts.php";
+    "http://ec2-18-234-198-232.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/getAllFavPosts.php";
 
   const { title } = useParams("title");
   const [posts, setPosts] = useState([]);
