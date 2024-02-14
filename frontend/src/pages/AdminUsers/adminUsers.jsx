@@ -7,7 +7,7 @@ import './adminUsers.sass';
 
 export const AdminUsersPage = () => {
     // JS
-    const urlGetUser = 'ec2-52-200-109-82.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/getAllUsers.php';
+    const urlGetUser = 'http://ec2-52-200-109-82.compute-1.amazonaws.com/testFinalProjects/new/actions/readData/getAllUsers.php';
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
