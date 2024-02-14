@@ -3,7 +3,7 @@ import "./register.sass";
 export const RegisterPage = () => {
   // JS
   // const url = 'url del servidor en aws';
-  const url = 'http://localhost/testFinalProjects/new/auth/register.php';
+  const url = 'http://ec2-3-86-101-85.compute-1.amazonaws.com/testFinalProjects/new/auth/register.php';
 
   // HTML
   return (

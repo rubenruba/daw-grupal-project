@@ -14,8 +14,8 @@ import { NotFoundPage } from './pages/NotFound/NotFound';
 import { ResetPasswordPage } from './pages/ResetPassword/resetpassword';
 import { ContactUs } from './pages/ContacUs/contactus';
 
-const urlLogged = "http://localhost/testFinalProjects/new/auth/isLogged.php";
-const urlAdmin = "http://localhost/testFinalProjects/new/auth/isAdmin.php";
+const urlLogged = "http://ec2-3-86-101-85.compute-1.amazonaws.com/testFinalProjects/new/auth/isLogged.php";
+const urlAdmin = "http://ec2-3-86-101-85.compute-1.amazonaws.com/testFinalProjects/new/auth/isAdmin.php";
 const cookies = document.cookie.split(";");
 
 let userId;
