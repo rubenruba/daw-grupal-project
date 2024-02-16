@@ -18,8 +18,11 @@
 
         // Obtener el usuario que se acaba de crear para poder guardar el userId en la session
         $dbQuery = $db->query("SELECT * FROM `User` WHERE `Email` = '$gmailNav'");
-        startSession($dbQuery->fetchAll()[0]); // User
+        $user = $dbQuery->fetchAll()[0];
+        startSession($user); // User
 
+        setcookie("userId", $user['UserId'], 0, '/'); // Alamcenamos en una cookie en el navegador el userId
+        
         // Cambia la url a landing
         header('Location: http://ec2-3-89-153-35.compute-1.amazonaws.com/');
 
