@@ -17,7 +17,7 @@
 
         $db->query($dbQuery);
 
-        header("Location: http://ec2-52-200-109-82.compute-1.amazonaws.com/post?postId=$postId")
+        header("Location: http://ec2-3-89-153-35.compute-1.amazonaws.com/post?postId=$postId")
 
         $db = null;
         $dbQuery = null;
